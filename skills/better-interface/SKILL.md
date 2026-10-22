@@ -1,6 +1,6 @@
 ---
 name: better-interface
-description: 'Cross-discipline review of a Rust desktop UI (Freya, egui, gpui) as one system. Walks accessibility, layout, writing, typography and UI polish in that order, cites file:line evidence from the Rust source, and consolidates one ranked verdict (Block or Approve). Use when the user asks to review, critique or audit a screen, flow, component or whole app written in Rust, or asks whether the interface is ready to ship. Adapted for local Rust code from Jakub Krehel''s better-interface skill. Usually invoked by the native-ux router; can be called directly.'
+description: 'Cross-discipline review of a UI in any stack (Rust desktop with Freya, egui or gpui first-class; web and mobile too) as one system. Walks accessibility, layout, writing, typography and UI polish in that order, cites file:line evidence from the Rust source, and consolidates one ranked verdict (Block or Approve). Use when the user asks to review, critique or audit a screen, flow, component or whole app in Rust, web or mobile, or asks whether the interface is ready to ship. Adapted for local Rust code from Jakub Krehel''s better-interface skill. Usually invoked by the native-ux router; can be called directly.'
 ---
 
 # Review the interface as one system

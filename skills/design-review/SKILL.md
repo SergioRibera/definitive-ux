@@ -1,6 +1,6 @@
 ---
 name: design-review
-description: 'Senior-style, prioritized design critique of a Rust desktop UI (Freya, egui, gpui) from a screenshot, a running window or component source. Covers visual hierarchy, typography, spacing, color and contrast, motion, component states, window resizing, accessibility, copy and consistency. Returns findings ranked Blocking, Important, Polish, each with a specific fix in the project''s framework idiom, and can apply the safe ones with --apply. Use when the user asks for a design review, crit, craft check or "does this look right" before a review, handoff or release. Adapted for local Rust code from Superfuture''s design-review skill. Usually invoked by the native-ux router; can be called directly.'
+description: 'Senior-style, prioritized design critique of a UI in any stack (Rust desktop with Freya, egui or gpui; web; mobile) from a screenshot, a running window or component source. Covers visual hierarchy, typography, spacing, color and contrast, motion, component states, window resizing, accessibility, copy and consistency. Returns findings ranked Blocking, Important, Polish, each with a specific fix in the project''s framework idiom, and can apply the safe ones with --apply. Use when the user asks for a design review, crit, craft check or "does this look right" before a review, handoff or release. Adapted for local Rust code from Superfuture''s design-review skill. Usually invoked by the native-ux router; can be called directly.'
 ---
 
 # design-review

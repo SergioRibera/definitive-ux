@@ -1,6 +1,6 @@
 ---
 name: map-user-flows
-description: 'Map the end-to-end user journey through a Rust desktop app (Freya Routable routes, egui screen enums, gpui root views), write a sequential user story per screen, and produce a markdown document with phases, a Mermaid flow diagram, story cards and prioritized action items (flow gaps, story refinements, design needs) each with a recommendation and a ready-to-paste prompt. Use when the user asks to map flows, write user stories from the app, find missing screens or states, or prepare a PRD or handoff from existing Rust UI code. Adapted for Rust code from Amy H.''s Figma map-user-flows skill. Usually invoked by the native-ux router; can be called directly.'
+description: 'Map the end-to-end user journey through an app in any stack (Freya Routable routes, egui screen enums, gpui root views, web routers), write a sequential user story per screen, and produce a markdown document with phases, a Mermaid flow diagram, story cards and prioritized action items (flow gaps, story refinements, design needs) each with a recommendation and a ready-to-paste prompt. Use when the user asks to map flows, write user stories from the app, find missing screens or states, or prepare a PRD or handoff from existing Rust UI code. Adapted for Rust code from Amy H.''s Figma map-user-flows skill. Usually invoked by the native-ux router; can be called directly.'
 ---
 
 # Map user flows
