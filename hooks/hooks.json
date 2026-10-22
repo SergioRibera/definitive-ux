@@ -1,5 +1,5 @@
 {
-  "description": "Nudges Claude to load the native-ux orchestrator when a prompt is about UI/UX.",
+  "description": "Nudges Claude to load the definitive-ux orchestrator when a prompt is about UI/UX.",
   "hooks": {
     "UserPromptSubmit": [
       {

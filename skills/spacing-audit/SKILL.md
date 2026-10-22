@@ -1,11 +1,11 @@
 ---
 name: spacing-audit
-description: 'Audit padding, gaps and margins in UI code of any stack (Freya .padding/.spacing/.margin, egui Margin/item_spacing/add_space, gpui p_*/gap_*/px(), Tailwind and CSS spacing) against a 4/8pt scale, report every off-grid value as before/after, then snap them after the summary is shown. Use when spacing looks inconsistent, before a design handoff or release, when tightening a theme or token module, or when the user asks to check, align, clean up or standardize spacing. Adapted for Rust code from the Figma community spacing-audit skill. Usually invoked by the native-ux router; can be called directly.'
+description: 'Audit padding, gaps and margins in UI code of any stack (Freya .padding/.spacing/.margin, egui Margin/item_spacing/add_space, gpui p_*/gap_*/px(), Tailwind and CSS spacing) against a 4/8pt scale, report every off-grid value as before/after, then snap them after the summary is shown. Use when spacing looks inconsistent, before a design handoff or release, when tightening a theme or token module, or when the user asks to check, align, clean up or standardize spacing. Adapted for Rust code from the Figma community spacing-audit skill. Usually invoked by the definitive-ux router; can be called directly.'
 ---
 
 # Spacing audit
 
-> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `native-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `native-ux` orchestrator when run through it.
+> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `definitive-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
 
 Check a layout against a 4/8pt spacing scale, report every value that is off the grid, and snap it to the nearest correct step. The goal is consistent, predictable rhythm that is easy to maintain. Adapted from the Figma community `spacing-audit` skill for Rust source instead of auto-layout frames.
 

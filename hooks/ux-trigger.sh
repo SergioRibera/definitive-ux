@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # UserPromptSubmit hook: if the prompt smells like UI/UX work, remind Claude to
-# route through the native-ux orchestrator. Prints nothing otherwise.
+# route through the definitive-ux orchestrator. Prints nothing otherwise.
 set -u
 input="$(cat 2>/dev/null || true)"
 prompt="$(printf '%s' "$input" | sed -n 's/.*"prompt"[[:space:]]*:[[:space:]]*"\(.*\)".*/\1/p' | head -c 4000)"
@@ -12,7 +12,7 @@ pattern='(\bui\b|\bux\b|interfa[cz]|dise[ñn]|design|redesign|redise|pantalla|sc
 
 if printf '%s' "$lower" | grep -Eq "$pattern"; then
   cat <<'MSG'
-[native-ux] This prompt looks like UI/UX work. Before answering, load the `native-ux:native-ux` skill and follow its router: classify the intent (question / build / redesign / audit / motion / spacing / components / flows), detect the stack (Rust native via `rust-gui-map`, web, mobile, description-only), then invoke only the specialist skills the router names, in the order it gives. Produce one consolidated report, not one per skill.
+[definitive-ux] This prompt looks like UI/UX work. Before answering, load the `definitive-ux:definitive-ux` skill and follow its router: classify the intent (question / build / redesign / audit / motion / spacing / components / flows), detect the stack (Rust native via `rust-gui-map`, web, mobile, description-only), then invoke only the specialist skills the router names, in the order it gives. Produce one consolidated report, not one per skill.
 MSG
 fi
 exit 0

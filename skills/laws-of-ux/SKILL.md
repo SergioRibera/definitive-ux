@@ -1,6 +1,6 @@
 ---
 name: laws-of-ux
-description: 'Apply the 30 Laws of UX (lawsofux.com: Fitts, Hick, Jakob, Miller, Doherty, Tesler, Postel, Peak-End, Gestalt proximity/similarity/common region, Von Restorff, Zeigarnik, Goal-Gradient, cognitive load, choice overload and the rest) as concrete decisions about an interface in any stack: Rust desktop (Freya, egui, gpui), web or mobile. Use for quick questions ("how big should this button be", "how many options", "which principle applies", "is 600ms ok"), as the Why layer inside any UI audit, and as the decision rules before building a screen, form, onboarding, pricing page, navigation or dashboard. Also the owner of dark-pattern and consent checks. Usually invoked by the native-ux router; call directly for quick answers.'
+description: 'Apply the 30 Laws of UX (lawsofux.com: Fitts, Hick, Jakob, Miller, Doherty, Tesler, Postel, Peak-End, Gestalt proximity/similarity/common region, Von Restorff, Zeigarnik, Goal-Gradient, cognitive load, choice overload and the rest) as concrete decisions about an interface in any stack: Rust desktop (Freya, egui, gpui), web or mobile. Use for quick questions ("how big should this button be", "how many options", "which principle applies", "is 600ms ok"), as the Why layer inside any UI audit, and as the decision rules before building a screen, form, onboarding, pricing page, navigation or dashboard. Also the owner of dark-pattern and consent checks. Usually invoked by the definitive-ux router; call directly for quick answers.'
 ---
 
 # Laws of UX
@@ -18,7 +18,7 @@ Turn the Laws of UX into concrete decisions about *this* interface: an observabl
 
 Area files in `references/areas/`: `layout-content.md` (hierarchy, grouping, emphasis) · `navigation-choices.md` (nav, option counts, pricing) · `forms-input.md` (forms, validation, selects, targets, code red flags per stack) · `feedback-states.md` (latency, loading, empty, error, success) · `onboarding-flows.md` (onboarding, multi-step, progress) · `ethics.md` (defaults, dark patterns). `references/laws.md` has every law condensed with its source link, for theory or citation requests only.
 
-**Stack idioms** come from elsewhere: Rust native from the `rust-gui-map` skill, web and mobile from `native-ux/references/web-map.md`. This skill names the rule and the threshold; the map names the API.
+**Stack idioms** come from elsewhere: Rust native from the `rust-gui-map` skill, web and mobile from `definitive-ux/references/web-map.md`. This skill names the rule and the threshold; the map names the API.
 
 **Quick answers are short:** under 200 words, no tables, at most one small snippet, one law. Answer, reason, fix. Longer only on request.
 
@@ -46,7 +46,7 @@ Area files in `references/areas/`: `layout-content.md` (hierarchy, grouping, emp
 4. Cite at most one or two laws per finding, only when they explain the harm.
 5. Fewer, stronger findings: typically 4 to 8 defects and risks. Merge related ones.
 6. Fixes in the project's stack and idiom, minimal snippets.
-7. When running inside `native-ux`, hand findings to the unified report instead of this format.
+7. When running inside `definitive-ux`, hand findings to the unified report instead of this format.
 
 ```markdown
 # UX review: <screen>

@@ -1,9 +1,9 @@
 ---
-name: native-ux
+name: definitive-ux
 description: 'The definitive UI/UX orchestrator. ALWAYS use this skill first for anything about an interface, screen, app, website, landing, pricing page, dashboard, form, onboarding, component, layout, theme, icons, typography, spacing, animation, usability, accessibility or user flow, in Rust desktop apps (Freya, egui, gpui), web or mobile, whether the user wants to build something new, redesign, review, audit, critique, polish, "make it feel better", ask a quick UX question, or write a PRD or user stories from code, even if they never say "UX", "design" or "review". It classifies the intent, detects the stack, picks the specialist skills (design-review, better-interface, laws-of-ux, find-animation-opportunities, spacing-audit, analyze-components, map-user-flows, rust-gui-map), runs them in the right order and delivers one consolidated report.'
 ---
 
-# native-ux
+# definitive-ux
 
 You are the router. You never review, build or audit by yourself. You resolve what the user wants and which stack they are on, then run the specialist skills in the order the router gives and merge their output into one report. Every specialist owns its rules; this file owns only the decision of who runs, when, and how results combine.
 
@@ -116,9 +116,9 @@ Headless sections are omitted. For build intents the report is replaced by the b
 
 ## Manual invocation
 
-Skill names are plain: `native-ux`, `design-review`, `better-interface`, `laws-of-ux`, `find-animation-opportunities`, `spacing-audit`, `analyze-components`, `map-user-flows`, `rust-gui-map`. Claude Code namespaces them under the plugin (`/native-ux:design-review`); Codex, Cursor, Gemini CLI, OpenCode, Copilot and other Agent Skills hosts use the bare name. A direct call skips the router but still uses the unified severity scale and the report skeleton.
+Skill names are plain: `definitive-ux`, `design-review`, `better-interface`, `laws-of-ux`, `find-animation-opportunities`, `spacing-audit`, `analyze-components`, `map-user-flows`, `rust-gui-map`. Claude Code namespaces them under the plugin (`/definitive-ux:design-review`); Codex, Cursor, Gemini CLI, OpenCode, Copilot and other Agent Skills hosts use the bare name. A direct call skips the router but still uses the unified severity scale and the report skeleton.
 
-Triggering: Claude Code gets a `UserPromptSubmit` hook from the plugin. Every other host relies on the skill descriptions plus the `AGENTS.md` snippet in `templates/AGENTS.snippet.md`, which tells the agent to load `native-ux` first for any UI/UX work.
+Triggering: Claude Code gets a `UserPromptSubmit` hook from the plugin. Every other host relies on the skill descriptions plus the `AGENTS.md` snippet in `templates/AGENTS.snippet.md`, which tells the agent to load `definitive-ux` first for any UI/UX work.
 
 ## Interplay with other installed skills
 

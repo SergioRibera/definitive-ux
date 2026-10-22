@@ -1,10 +1,10 @@
 {
-  "name": "native-ux",
-  "version": "0.1.2",
+  "name": "definitive-ux",
+  "version": "0.2.0",
   "description": "The definitive native UI/UX skill set: one orchestrator that routes any design, build, redesign, audit, motion, spacing, component or flow request to the right specialist skill, with first-class support for Rust desktop apps (Freya, egui, gpui) and sane fallbacks for web and mobile.",
   "author": { "name": "Sergio Ribera", "url": "https://github.com/SergioRibera" },
-  "homepage": "https://github.com/SergioRibera/native-ux",
-  "repository": "https://github.com/SergioRibera/native-ux",
+  "homepage": "https://github.com/SergioRibera/definitive-ux",
+  "repository": "https://github.com/SergioRibera/definitive-ux",
   "license": "MIT",
   "keywords": ["ux", "ui", "design-review", "rust", "freya", "egui", "gpui", "laws-of-ux", "accessibility", "animation", "skills"]
 }

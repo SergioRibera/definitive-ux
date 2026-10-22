@@ -1,11 +1,11 @@
 ---
 name: find-animation-opportunities
-description: 'Search a UI codebase in any stack (Rust desktop with Freya, egui or gpui; web; mobile) for places that don''t animate but should, and reject everything that shouldn''t. Read-only; it proposes motion with exact framework values (AnimNum/Ease/Function, animate_bool_with_time, with_animation/easing), it does not implement it. Use when the user asks "what could be animated here?", wants the app to "feel more alive", or wants a motion pass before polish. For fixing existing animations use review-animations or improve-animations instead. Adapted for Rust code from Emil Kowalski''s skill. Usually invoked by the native-ux router; can be called directly.'
+description: 'Search a UI codebase in any stack (Rust desktop with Freya, egui or gpui; web; mobile) for places that don''t animate but should, and reject everything that shouldn''t. Read-only; it proposes motion with exact framework values (AnimNum/Ease/Function, animate_bool_with_time, with_animation/easing), it does not implement it. Use when the user asks "what could be animated here?", wants the app to "feel more alive", or wants a motion pass before polish. For fixing existing animations use review-animations or improve-animations instead. Adapted for Rust code from Emil Kowalski''s skill. Usually invoked by the definitive-ux router; can be called directly.'
 ---
 
 # Finding animation opportunities
 
-> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `native-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `native-ux` orchestrator when run through it.
+> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `definitive-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
 
 Adapted from Emil Kowalski's `find-animation-opportunities` (emilkowal.ski). The gate, the posture and the output are his. The recipes are rewritten for Freya, egui and gpui.
 

@@ -1,11 +1,11 @@
 ---
 name: design-review
-description: 'Senior-style, prioritized design critique of a UI in any stack (Rust desktop with Freya, egui or gpui; web; mobile) from a screenshot, a running window or component source. Covers visual hierarchy, typography, spacing, color and contrast, motion, component states, window resizing, accessibility, copy and consistency. Returns findings ranked Blocking, Important, Polish, each with a specific fix in the project''s framework idiom, and can apply the safe ones with --apply. Use when the user asks for a design review, crit, craft check or "does this look right" before a review, handoff or release. Adapted for local Rust code from Superfuture''s design-review skill. Usually invoked by the native-ux router; can be called directly.'
+description: 'Senior-style, prioritized design critique of a UI in any stack (Rust desktop with Freya, egui or gpui; web; mobile) from a screenshot, a running window or component source. Covers visual hierarchy, typography, spacing, color and contrast, motion, component states, window resizing, accessibility, copy and consistency. Returns findings ranked Blocking, Important, Polish, each with a specific fix in the project''s framework idiom, and can apply the safe ones with --apply. Use when the user asks for a design review, crit, craft check or "does this look right" before a review, handoff or release. Adapted for local Rust code from Superfuture''s design-review skill. Usually invoked by the definitive-ux router; can be called directly.'
 ---
 
 # design-review
 
-> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `native-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `native-ux` orchestrator when run through it.
+> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `definitive-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
 
 Adapted from Joey Primiani's Superfuture `design-review`. The rubric is his. The telemetry ping and the license-gated Pro tier were removed; everything runs locally against Rust source and a native window.
 
@@ -13,7 +13,7 @@ A senior-level craft critique. Opinionated and specific, not a checklist dump.
 
 ## 1. Acquire the artifact
 
-Resolve the stack first: Rust crates load the `rust-gui-map` skill; web and mobile use `native-ux/references/web-map.md`.
+Resolve the stack first: Rust crates load the `rust-gui-map` skill; web and mobile use `definitive-ux/references/web-map.md`.
 
 - **Screenshot or image**: read it. Best for visual judgment (hierarchy, type, spacing, color). Ask for the window size and theme (light or dark) if not obvious.
 - **Component or screen source** (`.rs`): read it plus the theme or token module it pulls from. Enables implementation-level fixes with `file:line` references and `--apply`.

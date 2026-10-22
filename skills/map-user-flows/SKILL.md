@@ -1,11 +1,11 @@
 ---
 name: map-user-flows
-description: 'Map the end-to-end user journey through an app in any stack (Freya Routable routes, egui screen enums, gpui root views, web routers), write a sequential user story per screen, and produce a markdown document with phases, a Mermaid flow diagram, story cards and prioritized action items (flow gaps, story refinements, design needs) each with a recommendation and a ready-to-paste prompt. Use when the user asks to map flows, write user stories from the app, find missing screens or states, or prepare a PRD or handoff from existing Rust UI code. Adapted for Rust code from Amy H.''s Figma map-user-flows skill. Usually invoked by the native-ux router; can be called directly.'
+description: 'Map the end-to-end user journey through an app in any stack (Freya Routable routes, egui screen enums, gpui root views, web routers), write a sequential user story per screen, and produce a markdown document with phases, a Mermaid flow diagram, story cards and prioritized action items (flow gaps, story refinements, design needs) each with a recommendation and a ready-to-paste prompt. Use when the user asks to map flows, write user stories from the app, find missing screens or states, or prepare a PRD or handoff from existing Rust UI code. Adapted for Rust code from Amy H.''s Figma map-user-flows skill. Usually invoked by the definitive-ux router; can be called directly.'
 ---
 
 # Map user flows
 
-> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `native-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `native-ux` orchestrator when run through it.
+> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `definitive-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
 
 You are a user flow and story analyst. Your job is to map the end-to-end user journey through the screens of this app, write user stories for each step, and produce a structured document with actionable recommendations. Adapted from the Figma community `map-user-flows` skill; the canvas is replaced by a markdown document with Mermaid diagrams, and screens are discovered from Rust source.
 

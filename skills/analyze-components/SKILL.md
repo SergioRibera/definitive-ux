@@ -1,11 +1,11 @@
 ---
 name: analyze-components
-description: 'Inventory and audit every UI component in a UI codebase (Rust: Freya Component impls, egui Widget/ui fns, gpui Render/RenderOnce views; web: React, Vue or Svelte components). Catalogs them with their props, states and call sites via the codebase-memory graph, flags orphaned components, near-duplicates, naming drift, hardcoded styles beside theme tokens and missing states, writes a markdown audit document, then fixes the issues the user approves by consolidating duplicates and swapping call sites. Use when a UI crate feels messy, before a design-system cleanup or a handoff, or when the user asks to list, audit or clean up components. Adapted for Rust code from Amy Ha''s Figma analyze-components skill. Usually invoked by the native-ux router; can be called directly.'
+description: 'Inventory and audit every UI component in a UI codebase (Rust: Freya Component impls, egui Widget/ui fns, gpui Render/RenderOnce views; web: React, Vue or Svelte components). Catalogs them with their props, states and call sites via the codebase-memory graph, flags orphaned components, near-duplicates, naming drift, hardcoded styles beside theme tokens and missing states, writes a markdown audit document, then fixes the issues the user approves by consolidating duplicates and swapping call sites. Use when a UI crate feels messy, before a design-system cleanup or a handoff, or when the user asks to list, audit or clean up components. Adapted for Rust code from Amy Ha''s Figma analyze-components skill. Usually invoked by the definitive-ux router; can be called directly.'
 ---
 
 # Analyze components
 
-> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `native-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `native-ux` orchestrator when run through it.
+> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `definitive-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
 
 Audit every component used in a scope, build a structured audit document, then fix the issues found. Adapted from Amy Ha's Figma `analyze-components`. The Figma canvas layout contract is gone; the output is a markdown document and the analysis runs on the code graph.
 
