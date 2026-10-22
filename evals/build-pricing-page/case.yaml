@@ -1,0 +1,7 @@
+schema_version: "1.1"
+name: build-pricing-page
+expected_outcome: |
+  A working single-file pricing.html with Tailwind CDN. Pro is visually emphasized as the recommended plan,
+  there is one dominant CTA per plan with Pro's standing out, Enterprise is de-emphasized or separated,
+  feature lists are scannable/chunked or comparable, and the page follows familiar pricing conventions.
+  The response briefly explains key UX decisions.

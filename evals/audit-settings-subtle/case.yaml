@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: audit-settings-subtle
+expected_outcome: |
+  review.md finds the subtle issues: uniform space-y-6 so section labels aren't grouped with their controls,
+  frequency options are clickable spans with color-only selected state and no keyboard support, partner data
+  sharing pre-checked (dark pattern / consent), three identical primary buttons including destructive
+  "Cancel subscription", and a confirmshaming cancel modal with a tiny low-contrast decline link. Flags the
+  dark patterns as defects, not style nits.
+context:
+  scaffold_script: place-files.sh

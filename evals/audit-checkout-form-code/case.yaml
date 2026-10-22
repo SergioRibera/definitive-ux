@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: audit-checkout-form-code
+expected_outcome: |
+  A prioritized UX review (review.md) of the checkout component that finds the planted problems:
+  tiny non-button close icon, placeholder-only labels, strict phone/card regex, form wiped on error,
+  vague error message, two equally prominent buttons with Reset next to Pay, no loading state on submit,
+  250-option select without search, missing input types/autocomplete, uniform spacing. Each finding cites
+  a relevant UX law and gives a concrete Tailwind/React fix.
+context:
+  scaffold_script: place-files.sh

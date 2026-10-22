@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: quick-question-button-size
+expected_outcome: |
+  A concise answer.md (a few short paragraphs) citing WCAG 2.2 2.5.8 24x24px minimum, 44x44 recommended
+  (WCAG 2.5.5 / Apple 44pt / Material 48dp), says 20x20 is below the minimum, and suggests padding the hit
+  area without enlarging the glyph. Mentions Fitts's Law.

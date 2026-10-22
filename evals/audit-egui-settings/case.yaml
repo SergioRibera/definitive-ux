@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: audit-egui-settings
+expected_outcome: |
+  review.md finds the subtle issues in the egui panel: uniform item_spacing.y = 24 so section labels are not
+  grouped with their controls; frequency options are clickable Labels with no widget_info/radio semantics and
+  color-only selected state; partner data sharing defaults to true (consent dark pattern); Save, Cancel
+  subscription and Export data are three identical buttons in a row with the destructive one in the middle;
+  the cancel Window uses confirmshaming copy and a tiny low-contrast decline label. Dark patterns are rated
+  Blocking, not polish. Fixes use egui idioms (radio_value, widget_info, Frame::group, spacing, Visuals).
+context:
+  scaffold_script: place-files.sh

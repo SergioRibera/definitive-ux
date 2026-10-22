@@ -1,0 +1,16 @@
+{
+  "description": "Nudges Claude to load the native-ux orchestrator when a prompt is about UI/UX.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/ux-trigger.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

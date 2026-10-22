@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: route-company-website
+expected_outcome: |
+  The agent treats this as a Build intent on the web stack, produces a working index.html with Tailwind CDN
+  containing the four sections, one dominant CTA per view, conventional navigation, semantic HTML with
+  visible focus and labelled contact form, and ends with a short "UX decisions" note citing laws. It then
+  runs a quick review loop on the result and lists any Blocking items fixed. It does not propose Rust or
+  native idioms.

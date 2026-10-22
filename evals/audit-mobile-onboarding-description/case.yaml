@@ -1,0 +1,7 @@
+schema_version: "1.1"
+name: audit-mobile-onboarding-description
+expected_outcome: |
+  onboarding-review.md identifies: unskippable tutorial slides (Paradox of the Active User), 12-field single-screen
+  form (cognitive load, Hick, chunking; defer non-essential fields, Tesler), small top-right Continue button
+  (Fitts, thumb reach, Jakob), empty dashboard with 8 zero widgets (empty states, Peak-End, Goal-Gradient/Zeigarnik
+  for setup progress). Proposes a concrete redesigned flow, prioritized.

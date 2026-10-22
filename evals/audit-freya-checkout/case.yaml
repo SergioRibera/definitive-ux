@@ -1,0 +1,13 @@
+schema_version: "1.1"
+name: audit-freya-checkout
+expected_outcome: |
+  review.md is a prioritized UX review of the Freya checkout component that finds the planted problems:
+  16px bare rect close control with no a11y role, name or focusability; placeholder-only inputs;
+  strict phone/card length checks that reject spaces and dashes; form wiped on the phone error; vague
+  "Invalid input" error shown only by color and tiny font; Reset and Pay as identical Buttons side by side;
+  submit spawns a task with no loading state and ignores the Result; a Select with ~250 countries and no
+  search; off-grid 14px padding/spacing. Fixes are written in Freya 0.5 builder idiom (a11y_role, a11y_alt,
+  a11y_focusable, label(), FutureState or use_future, .padding(16.)), never HTML/CSS. Severity uses the
+  unified Blocking/Important/Polish scale and every finding cites a line or element.
+context:
+  scaffold_script: place-files.sh
