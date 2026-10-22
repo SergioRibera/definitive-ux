@@ -1,6 +1,6 @@
 ---
 name: find-animation-opportunities
-description: Search a Rust desktop UI codebase (Freya, egui, gpui) for places that don't animate but should, and reject everything that shouldn't. Read-only; it proposes motion with exact framework values (AnimNum/Ease/Function, animate_bool_with_time, with_animation/easing), it does not implement it. Use when the user asks "what could be animated here?", wants the app to "feel more alive", or wants a motion pass before polish. For fixing existing animations use review-animations or improve-animations instead. Adapted for Rust code from Emil Kowalski's skill. Usually invoked by the native-ux router; can be called directly.
+description: 'Search a Rust desktop UI codebase (Freya, egui, gpui) for places that don''t animate but should, and reject everything that shouldn''t. Read-only; it proposes motion with exact framework values (AnimNum/Ease/Function, animate_bool_with_time, with_animation/easing), it does not implement it. Use when the user asks "what could be animated here?", wants the app to "feel more alive", or wants a motion pass before polish. For fixing existing animations use review-animations or improve-animations instead. Adapted for Rust code from Emil Kowalski''s skill. Usually invoked by the native-ux router; can be called directly.'
 ---
 
 # Finding animation opportunities

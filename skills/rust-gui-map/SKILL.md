@@ -1,6 +1,6 @@
 ---
 name: rust-gui-map
-description: Framework API map for reviewing Rust desktop UIs built with Freya 0.5, egui 0.32 or gpui 0.2. Part of the native-ux plugin. Load it before any UI review, audit or motion skill runs on a Rust GUI crate (better-interface, design-review, find-animation-opportunities, spacing-audit, analyze-components, map-user-flows). Tells those skills how to detect the framework, where styles, states, focus, accessibility, animation and navigation live in code, and which web concept maps to which Rust API.
+description: 'Framework API map for reviewing Rust desktop UIs built with Freya 0.5, egui 0.32 or gpui 0.2. Part of the native-ux plugin. Load it before any UI review, audit or motion skill runs on a Rust GUI crate (better-interface, design-review, find-animation-opportunities, spacing-audit, analyze-components, map-user-flows). Tells those skills how to detect the framework, where styles, states, focus, accessibility, animation and navigation live in code, and which web concept maps to which Rust API.'
 ---
 
 # Rust GUI map

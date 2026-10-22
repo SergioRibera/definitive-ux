@@ -1,6 +1,6 @@
 ---
 name: analyze-components
-description: Inventory and audit every UI component in a Rust desktop GUI crate (Freya Component impls, egui Widget/ui fns, gpui Render/RenderOnce views). Catalogs them with their props, states and call sites via the codebase-memory graph, flags orphaned components, near-duplicates, naming drift, hardcoded styles beside theme tokens and missing states, writes a markdown audit document, then fixes the issues the user approves by consolidating duplicates and swapping call sites. Use when a UI crate feels messy, before a design-system cleanup or a handoff, or when the user asks to list, audit or clean up components. Adapted for Rust code from Amy Ha's Figma analyze-components skill. Usually invoked by the native-ux router; can be called directly.
+description: 'Inventory and audit every UI component in a Rust desktop GUI crate (Freya Component impls, egui Widget/ui fns, gpui Render/RenderOnce views). Catalogs them with their props, states and call sites via the codebase-memory graph, flags orphaned components, near-duplicates, naming drift, hardcoded styles beside theme tokens and missing states, writes a markdown audit document, then fixes the issues the user approves by consolidating duplicates and swapping call sites. Use when a UI crate feels messy, before a design-system cleanup or a handoff, or when the user asks to list, audit or clean up components. Adapted for Rust code from Amy Ha''s Figma analyze-components skill. Usually invoked by the native-ux router; can be called directly.'
 ---
 
 # Analyze components

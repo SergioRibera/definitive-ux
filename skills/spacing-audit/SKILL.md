@@ -1,6 +1,6 @@
 ---
 name: spacing-audit
-description: Audit padding, gaps and margins in Rust desktop UI code (Freya .padding/.spacing/.margin, egui Margin/item_spacing/add_space, gpui p_*/gap_*/px()) against a 4/8pt scale, report every off-grid value as before/after, then snap them after the summary is shown. Use when spacing looks inconsistent, before a design handoff or release, when tightening a theme or token module, or when the user asks to check, align, clean up or standardize spacing. Adapted for Rust code from the Figma community spacing-audit skill. Usually invoked by the native-ux router; can be called directly.
+description: 'Audit padding, gaps and margins in Rust desktop UI code (Freya .padding/.spacing/.margin, egui Margin/item_spacing/add_space, gpui p_*/gap_*/px()) against a 4/8pt scale, report every off-grid value as before/after, then snap them after the summary is shown. Use when spacing looks inconsistent, before a design handoff or release, when tightening a theme or token module, or when the user asks to check, align, clean up or standardize spacing. Adapted for Rust code from the Figma community spacing-audit skill. Usually invoked by the native-ux router; can be called directly.'
 ---
 
 # Spacing audit

@@ -1,6 +1,6 @@
 ---
 name: design-review
-description: Senior-style, prioritized design critique of a Rust desktop UI (Freya, egui, gpui) from a screenshot, a running window or component source. Covers visual hierarchy, typography, spacing, color and contrast, motion, component states, window resizing, accessibility, copy and consistency. Returns findings ranked Blocking, Important, Polish, each with a specific fix in the project's framework idiom, and can apply the safe ones with --apply. Use when the user asks for a design review, crit, craft check or "does this look right" before a review, handoff or release. Adapted for local Rust code from Superfuture's design-review skill. Usually invoked by the native-ux router; can be called directly.
+description: 'Senior-style, prioritized design critique of a Rust desktop UI (Freya, egui, gpui) from a screenshot, a running window or component source. Covers visual hierarchy, typography, spacing, color and contrast, motion, component states, window resizing, accessibility, copy and consistency. Returns findings ranked Blocking, Important, Polish, each with a specific fix in the project''s framework idiom, and can apply the safe ones with --apply. Use when the user asks for a design review, crit, craft check or "does this look right" before a review, handoff or release. Adapted for local Rust code from Superfuture''s design-review skill. Usually invoked by the native-ux router; can be called directly.'
 ---
 
 # design-review
@@ -17,7 +17,7 @@ Resolve the stack first: Rust crates load the `rust-gui-map` skill; web and mobi
 
 - **Screenshot or image**: read it. Best for visual judgment (hierarchy, type, spacing, color). Ask for the window size and theme (light or dark) if not obvious.
 - **Component or screen source** (`.rs`): read it plus the theme or token module it pulls from. Enables implementation-level fixes with `file:line` references and `--apply`.
-- **Running app**: use the `run` skill to launch and screenshot it at the default and minimum window sizes. For Freya, `freya-testing` `render_to_file` gives a deterministic render; for egui, `egui_kittest` snapshots.
+- **Running app**: launch the app (the `run` skill in Claude Code, or the project's run command) and screenshot it at the default and minimum window sizes. For Freya, `freya-testing` `render_to_file` gives a deterministic render; for egui, `egui_kittest` snapshots.
 - If you have neither a render nor code for a visual question, ask for one before guessing.
 
 Index the crate with `codebase-memory-mcp` when the review spans more than one file so you can see how far a shared fix reaches.

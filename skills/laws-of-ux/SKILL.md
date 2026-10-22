@@ -1,6 +1,6 @@
 ---
 name: laws-of-ux
-description: Apply the 30 Laws of UX (lawsofux.com: Fitts, Hick, Jakob, Miller, Doherty, Tesler, Postel, Peak-End, Gestalt proximity/similarity/common region, Von Restorff, Zeigarnik, Goal-Gradient, cognitive load, choice overload and the rest) as concrete decisions about an interface in any stack: Rust desktop (Freya, egui, gpui), web or mobile. Use for quick questions ("how big should this button be", "how many options", "which principle applies", "is 600ms ok"), as the Why layer inside any UI audit, and as the decision rules before building a screen, form, onboarding, pricing page, navigation or dashboard. Also the owner of dark-pattern and consent checks. Usually invoked by the native-ux router; call directly for quick answers.
+description: 'Apply the 30 Laws of UX (lawsofux.com: Fitts, Hick, Jakob, Miller, Doherty, Tesler, Postel, Peak-End, Gestalt proximity/similarity/common region, Von Restorff, Zeigarnik, Goal-Gradient, cognitive load, choice overload and the rest) as concrete decisions about an interface in any stack: Rust desktop (Freya, egui, gpui), web or mobile. Use for quick questions ("how big should this button be", "how many options", "which principle applies", "is 600ms ok"), as the Why layer inside any UI audit, and as the decision rules before building a screen, form, onboarding, pricing page, navigation or dashboard. Also the owner of dark-pattern and consent checks. Usually invoked by the native-ux router; call directly for quick answers.'
 ---
 
 # Laws of UX

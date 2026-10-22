@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rust GUI Map"
+  short_description: "API map for Freya, egui and gpui UI reviews"
+  default_prompt: "Load the rust-gui-map skill and tell me which framework this crate uses and where its spacing, focus, accessibility, animation and navigation APIs live."

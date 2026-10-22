@@ -1,6 +1,6 @@
 ---
 name: better-interface
-description: Cross-discipline review of a Rust desktop UI (Freya, egui, gpui) as one system. Walks accessibility, layout, writing, typography and UI polish in that order, cites file:line evidence from the Rust source, and consolidates one ranked verdict (Block or Approve). Use when the user asks to review, critique or audit a screen, flow, component or whole app written in Rust, or asks whether the interface is ready to ship. Adapted for local Rust code from Jakub Krehel's better-interface skill. Usually invoked by the native-ux router; can be called directly.
+description: 'Cross-discipline review of a Rust desktop UI (Freya, egui, gpui) as one system. Walks accessibility, layout, writing, typography and UI polish in that order, cites file:line evidence from the Rust source, and consolidates one ranked verdict (Block or Approve). Use when the user asks to review, critique or audit a screen, flow, component or whole app written in Rust, or asks whether the interface is ready to ship. Adapted for local Rust code from Jakub Krehel''s better-interface skill. Usually invoked by the native-ux router; can be called directly.'
 ---
 
 # Review the interface as one system
@@ -32,7 +32,7 @@ A request naming a branch, commit range or uncommitted diff is a change review. 
 
 ### 2. Recon before judgment
 
-From `rust-gui-map`: framework, theme or token module, component crate, supported window sizes, test and preview commands. Index the crate with `codebase-memory-mcp` (`list_projects`, `index_repository`) so you can ask who renders a component and how far a shared fix reaches. Read `CLAUDE.md`, `AGENTS.md`, a design or theme doc. Name what you found, or that there is none. A documented convention settles taste. It never excuses a keyboard, focus or contrast failure.
+From `rust-gui-map`: framework, theme or token module, component crate, supported window sizes, test and preview commands. Index the crate with `codebase-memory-mcp` when that MCP server is available (otherwise use the host's symbol search) (`list_projects`, `index_repository`) so you can ask who renders a component and how far a shared fix reaches. Read `CLAUDE.md`, `AGENTS.md`, a design or theme doc. Name what you found, or that there is none. A documented convention settles taste. It never excuses a keyboard, focus or contrast failure.
 
 ### 3. Review in this order
 
