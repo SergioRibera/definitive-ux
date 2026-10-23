@@ -3,14 +3,14 @@
   "owner": { "name": "Sergio Ribera", "url": "https://github.com/SergioRibera" },
   "metadata": {
     "description": "Native UI/UX skills for Rust desktop apps (Freya, egui, gpui), web and mobile.",
-    "version": "0.3.3"
+    "version": "0.3.4"
   },
   "plugins": [
     {
       "name": "definitive-ux",
       "source": "./",
       "description": "Orchestrated UI/UX skill set: router + design-review, better-interface, laws-of-ux, find-animation-opportunities, spacing-audit, analyze-components, map-user-flows, stack-map.",
-      "version": "0.3.3",
+      "version": "0.3.4",
       "category": "design",
       "keywords": ["ux", "ui", "rust", "freya", "egui", "gpui"]
     }
