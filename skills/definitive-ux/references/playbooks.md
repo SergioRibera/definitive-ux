@@ -6,7 +6,7 @@ Each playbook is a sequence. Read-only steps never touch source. Steps marked **
 
 Trigger: "quiero hacer una app de escritorio", "nuevo proyecto freya/egui/gpui", "arma la UI de…".
 
-1. `rust-gui-map`: detect or choose the framework; state the idioms the build will use.
+1. `stack-map`: detect or choose the framework; state the idioms the build will use.
 2. `map-user-flows` in **plan mode**: with no code yet, derive screens, phases and stories from the description. Output becomes the build plan. Ask the entry point and platform if ambiguous.
 3. `laws-of-ux` build rules: one primary action per view, chunking, defaults, states, targets, progress. Decide before coding.
 4. Build with `rust-engineering` (and `freya` when applicable). Theme tokens first, components second, screens third. Every screen gets loading, empty and error branches from day one.
@@ -19,7 +19,7 @@ Trigger: "quiero hacer una app de escritorio", "nuevo proyecto freya/egui/gpui",
 
 Trigger: "quiero hacer una web para mi empresa", "landing", "sitio".
 
-1. Stack is web. Load `references/web-map.md`.
+1. Stack is web. Load `../stack-map/maps/web.md`.
 2. `laws-of-ux` build rules plus `areas/navigation-choices.md` and `areas/layout-content.md`. Decide: one dominant CTA per view, conventional nav (Jakob), scannable sections (chunking, serial position), real content hierarchy.
 3. If an aesthetics skill is installed (`impeccable`, `frontend-design`, `design-taste-frontend`, `high-end-visual-design`, `gpt-taste`), run it for visual direction. This plugin does not pick fonts or palettes.
 4. Build. Semantic HTML, visible focus, labels, `prefers-reduced-motion`, responsive from 320px.
@@ -40,7 +40,7 @@ Trigger: "página de precios", "planes", "pricing".
 
 Trigger: "rediseñar", "modernizar", "se ve viejo", "hazlo premium", "mejora la UI".
 
-1. Detect stack. Rust: `rust-gui-map` and index with `codebase-memory-mcp`.
+1. Detect stack. Rust: `stack-map` and index with `codebase-memory-mcp`.
 2. `analyze-components` read-only: inventory, duplicates, hardcoded tokens. The redesign must not multiply components.
 3. `design-review` on the current state as the **baseline**. Save it; it is the before.
 4. `map-user-flows` if the redesign touches more than one screen, to catch missing states before restyling.
@@ -75,7 +75,7 @@ Trigger: a branch name, PR number, "lo que cambié", "revisa mi diff".
 
 Trigger: "animar", "más vivo", "se siente muerto", "feel".
 
-1. `rust-gui-map` motion column, or `web-map.md`.
+1. `stack-map` motion row for the framework, `definitive-ux/references/motion-standards.md` for the rules.
 2. `find-animation-opportunities` read-only. Rejected list is mandatory.
 3. If the user wants implementation: take the top 1 to 3 rows, implement with `rust-engineering`, respect an existing reduce-motion setting or add one once.
 4. `better-interface` polish domain on the implemented motion (interruptible, no first-render fire, right properties).
@@ -84,7 +84,7 @@ Trigger: "animar", "más vivo", "se siente muerto", "feel".
 
 Trigger: "espaciado", "desalineado", "4/8", "ritmo".
 
-1. `rust-gui-map` spacing row.
+1. `stack-map` spacing row.
 2. `spacing-audit` summary. **confirm**. Snap. `cargo check`.
 3. If the audit finds no scale module, propose one token module as a single Important finding; do not create it unasked.
 
@@ -101,7 +101,7 @@ Trigger: "limpiar componentes", "duplicados", "design system", "inventario".
 
 Trigger: "user stories", "mapa de flujos", "PRD", "qué pantallas faltan", "handoff".
 
-1. Index. `rust-gui-map` navigation row to find routes.
+1. Index. `stack-map` navigation row to find routes.
 2. `map-user-flows`: writes `docs/user-flows.md` with Mermaid and action items. Read-only.
 3. If the user then wants the gaps built, each action item carries a paste-ready prompt; run P1 steps 3 to 6 per gap.
 
@@ -135,7 +135,7 @@ Trigger: "dashboard", "tabla", "métricas", "editor", "panel".
 
 Trigger: "accesibilidad", "teclado", "screen reader", "contraste", "a11y".
 
-1. `rust-gui-map` keyboard/focus/a11y rows (what the toolkit can and cannot expose).
+1. `stack-map` keyboard/focus/a11y rows (what the toolkit can and cannot expose).
 2. `better-interface` accessibility domain only, every trigger is Blocking.
 3. `design-review` §4 contrast numbers for both theme variants.
 4. Where the toolkit cannot expose a name or role (gpui today), one Important finding naming the platform gap, not one per element.
@@ -178,3 +178,70 @@ Trigger: an image or design link and "qué opinas", "revisa".
 - Spacing and motion after structure. Never polish a layout that will change.
 - Build intents always end with a review loop on the artifact, quick depth unless the user asked for full.
 - Every edit step is preceded by the summary it is based on and, where marked, by confirmation.
+
+## P19. Design source: tokens, theme, cross-platform consistency
+
+Trigger: "tokens", "theme", "dark mode", "DESIGN.md", "que se vea igual en desktop y móvil", "design system".
+
+1. `stack-map` for every target in the workspace.
+2. `design-source` in **document** mode if code exists, **create** otherwise. Read-only until the files are proposed. **confirm**.
+3. `design-source` **derive** for each target; `analyze-components` lists the components still reading literals; **extract** after confirmation.
+4. `design-review` §4 contrast in both modes on the derived themes.
+
+## P20. Persuade surface: landing, marketing, launch, store page
+
+Trigger: "landing", "web para mi empresa", "página de producto", "portfolio", "se ve genérica", "AI-made".
+
+1. Stack and form factor (web most often; a native showcase screen sometimes).
+2. `design-source` if the product has no tokens yet (the direction's palette and type become the semantic layer).
+3. `art-direction`: inventory, argument, direction sheet, imagery plan. **confirm** the direction in one line before building when the brief is vague.
+4. Build in the stack's idiom.
+5. `art-direction` look-and-fix passes on the render, then `design-review` for Blocking items.
+6. `find-animation-opportunities` for the one signature moment.
+
+Replaces P2 for web sites; P2 steps 3 to 6 now live here.
+
+## P21. Bolder / quieter / distill
+
+Trigger: "más audaz", "bájale", "simplificá".
+
+- Bolder: `art-direction` direction pass (idea, color strategy one step up: restrained → committed → full), then `design-review`. Never add tells to add energy.
+- Quieter: `design-review` with `slop-tells.md`, `spacing-audit`, reduce the color strategy one step, remove motion that fails the gate.
+- Distill: `map-user-flows` to find what the task needs, `laws-of-ux` Hick/Occam/Tesler, then `better-interface` quick on the reduced surface. Removed options go behind progressive disclosure, never deleted if the system cannot decide for the user.
+
+## P22. Harden before production
+
+Trigger: "producción", "edge cases", "qué pasa si", "i18n", "offline".
+
+1. `break-ui` on the main components and screens.
+2. `better-interface` writing (errors with recovery, pluralization), layout (growth and clipping), accessibility.
+3. `map-user-flows` design-needs section for missing error, empty, offline and permission states.
+4. Platform file: offline and degraded states for embedded and mobile.
+
+## P23. Motion, full
+
+Trigger: "animaciones", "que se sienta fluido", "springs", "transiciones".
+
+1. `stack-map` motion row + `motion-standards.md`.
+2. `improve-animations` on what exists (read-only plans).
+3. `find-animation-opportunities` for what is missing (reject list mandatory).
+4. **confirm** which plans and rows to implement; `animate` builds each one; `rust-engineering` for Rust edits; `cargo check`.
+5. Per form factor: TV animates focus and rails only, watch and embedded almost nothing, TUI none.
+
+## P24. Native feel for a new form factor
+
+Trigger: "llevarlo a TV", "versión para reloj", "HMI embebido", "que se sienta nativo en macOS".
+
+1. `stack-map` for the target framework; `platforms/<form factor>.md` whole.
+2. `design-source` derive for the target (density, type sizes, motion tokens change).
+3. `map-user-flows` on the existing app to decide which flows survive on the new form factor (watch keeps one or two).
+4. Build; `better-interface` with the platform file leading; `break-ui` at the form factor's worst case (TV: 10-foot text; watch: round clipping; embedded: exact pixels).
+
+## Combining rules (amended)
+
+- One full review per scope per turn.
+- Inventory and flows before restyling. Design source before building. Direction before markup on persuade surfaces.
+- Spacing and motion after structure.
+- Build intents end with a review loop, quick depth unless asked for full.
+- Every edit step is preceded by its summary and, where marked, confirmation.
+- Platform file always loaded; it changes thresholds, not principles.

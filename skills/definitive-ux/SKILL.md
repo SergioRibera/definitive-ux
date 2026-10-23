@@ -1,102 +1,121 @@
 ---
 name: definitive-ux
-description: 'The definitive UI/UX orchestrator. ALWAYS use this skill first for anything about an interface, screen, app, website, landing, pricing page, dashboard, form, onboarding, component, layout, theme, icons, typography, spacing, animation, usability, accessibility or user flow, in Rust desktop apps (Freya, egui, gpui), web or mobile, whether the user wants to build something new, redesign, review, audit, critique, polish, "make it feel better", ask a quick UX question, or write a PRD or user stories from code, even if they never say "UX", "design" or "review". It classifies the intent, detects the stack, picks the specialist skills (design-review, better-interface, laws-of-ux, find-animation-opportunities, spacing-audit, analyze-components, map-user-flows, rust-gui-map), runs them in the right order and delivers one consolidated report.'
+description: 'The definitive UI/UX orchestrator for any interface in any stack and form factor. ALWAYS use this skill first for anything about an interface, screen, app, website, landing, pricing page, dashboard, form, onboarding, component, layout, theme, tokens, design system, icons, typography, spacing, animation, usability, accessibility, user flow, native feel, or "make it look less generic": Rust desktop (Freya, egui, gpui, Slint, Iced), Rust web (Leptos, Dioxus, Yew), Rust mobile, TV, watch, embedded and HMI, terminal UIs (ratatui), hybrids (Tauri, Electron), plain web (HTML, React, Vue, Svelte), SwiftUI, Compose, Flutter and React Native. Covers build, redesign, review, audit, critique, polish, bolder, quieter, distill, harden, motion, spacing, component cleanup, design source and tokens, art direction, stress tests, PRDs and user stories from code, and quick UX questions, even when the user never says "UX" or "design". It classifies the intent, detects the stack and form factor, picks the specialist skills, runs them in order and delivers one consolidated report.'
 ---
 
 # definitive-ux
 
-You are the router. You never review, build or audit by yourself. You resolve what the user wants and which stack they are on, then run the specialist skills in the order the router gives and merge their output into one report. Every specialist owns its rules; this file owns only the decision of who runs, when, and how results combine.
+You are the router. You never review, build or audit by yourself. You resolve what the user wants, which stack and which form factor they are on, then run the specialist skills in the order the playbook gives and merge their output into one report. Every specialist owns its rules; this file owns only who runs, when, and how results combine.
+
+Native first, generic by design: the principles are the same everywhere; what changes per stack is the API map, and what changes per form factor is the convention file. Nothing here hardcodes a framework.
 
 ## Step 1. Classify the intent
 
-Pick exactly one primary intent. Secondary intents become support steps.
+Pick one primary intent. Secondary intents become support steps.
 
 | Intent | Signals (ES/EN) | Primary skill |
 | --- | --- | --- |
-| **Question** | "qué tamaño", "cuántas opciones", "which principle", "is this fast enough", one specific doubt | `laws-of-ux` (quick mode) |
-| **Build new** | "quiero hacer", "crea", "arma", "build", "new screen/app/site/landing/pricing" | `laws-of-ux` (build rules) + stack map; then the review loop |
-| **Redesign** | "rediseñar", "mejorar", "modernizar", "se ve viejo", "redesign", "make it premium" | `analyze-components` → `design-review` baseline → build → review loop |
-| **Review / audit** | "revisa", "critica", "auditar", "feedback", "antes de lanzar", "review", "is it ready" | `better-interface` (full) or `design-review` (fast crit); see Step 3 |
+| **Question** | one specific doubt, a threshold, "which principle applies" | `laws-of-ux` quick mode |
+| **Build new** | "quiero hacer", "crea", "arma", "build", new screen/app/site/landing/pricing | `design-source` if no theme exists → `art-direction` (persuade) or `laws-of-ux` build rules (operate/read) → build → review loop |
+| **Redesign** | "rediseñar", "modernizar", "se ve viejo", "hazlo premium", "menos genérico" | `analyze-components` → `design-review` baseline → plan → build → review loop |
+| **Review / audit** | "revisa", "critica", "auditar", "antes de lanzar", "is it ready" | `better-interface` full, or `design-review` fast; see Step 4 |
 | **Change review** | branch, PR, diff, "lo que cambié" | `better-interface` change-scoped |
-| **Motion** | "animar", "se siente muerto", "más vivo", "animation", "feel" | `find-animation-opportunities` |
+| **Polish / feel** | "pulir", "detalles", "no se siente nativo", "craft", "fluido" | `design-review` + `find-animation-opportunities` + platform conventions |
+| **Bolder** | "más audaz", "más personalidad", "muy soso", "aburrido" | `art-direction` direction pass + `design-review` |
+| **Quieter** | "bájale", "demasiado", "cansa", "sobrecargado" | `design-review` with `slop-tells.md` + `spacing-audit` |
+| **Distill** | "simplificar", "quitar", "demasiadas opciones", "menos" | `laws-of-ux` (Hick, Occam, Tesler) + `map-user-flows` to find what carries the task |
+| **Harden** | "producción", "edge cases", "errores", "i18n", "qué pasa si falla" | `break-ui` + `better-interface` writing and layout domains |
+| **Motion** | "animar", "más vivo", "se siente muerto", "transición", "spring" | `find-animation-opportunities` (where) → `animate` (build one) / `improve-animations` (fix existing) |
 | **Spacing** | "espaciado", "desalineado", "padding", "4/8", "ritmo" | `spacing-audit` |
-| **Components** | "limpiar componentes", "duplicados", "design system", "inventario", "qué componentes hay" | `analyze-components` |
+| **Components** | "limpiar componentes", "duplicados", "inventario", "design system" | `analyze-components` |
+| **Design source / tokens / theme** | "tokens", "tema", "dark mode", "DESIGN.md", "consistencia entre plataformas", "misma fuente de diseño" | `design-source` |
 | **Flows / PRD** | "user stories", "flujo", "mapa de pantallas", "PRD", "qué pantallas faltan" | `map-user-flows` |
-| **Ethics** | "dark pattern", "consent", "cancel flow", "pre-checked" | `laws-of-ux` (areas/ethics) inside whatever review runs |
-| **Polish / feel** | "pulir", "detalles", "no se siente bien", "craft" | `design-review` + `find-animation-opportunities` |
+| **Stress test** | "qué pasa con nombres largos", "datos reales", "edge cases visuales" | `break-ui` |
+| **Ethics** | "dark pattern", "consent", "cancel flow", "pre-checked" | `laws-of-ux` ethics inside whatever review runs |
 
-When two intents tie, prefer the one that produces the bigger deliverable (build over question, review over spacing) and run the other as a support step.
+Ties: prefer the bigger deliverable (build over question, review over spacing) and run the other as support.
 
-## Step 2. Detect the stack
+## Step 2. Detect stack and form factor
 
-| Evidence | Stack | What to load |
+Load `stack-map`. It resolves the framework from the project, loads one verified API map (two for hybrids) and names the form factor. Then load the matching convention file from `references/platforms/`: `desktop`, `mobile`, `tv`, `watch`, `embedded`, `web`, `tui`. State both in the report. Hybrids (Tauri, Dioxus desktop, Electron): content is web, shell is the host platform; findings say which side they belong to.
+
+With only a screenshot or a description: no map; code-level domains are Not verified; the form factor comes from the user.
+
+## Step 3. Register
+
+Every surface is one of three. It changes which rules lead:
+
+| Register | Surfaces | Leads |
 | --- | --- | --- |
-| `Cargo.toml` with `freya`, `egui`/`eframe`, `gpui` | Rust native | `rust-gui-map` first, always. Rust edits also follow the `rust-engineering` skill if installed. |
-| `package.json`, `.html`, `.tsx`, `.vue`, `.svelte`, Tailwind | Web | `references/web-map.md` for idioms; the specialists' rules apply unchanged |
-| Flutter, SwiftUI, Kotlin, React Native, "app móvil" | Mobile | `references/web-map.md` mobile column; thresholds from `laws-of-ux` |
-| Only a screenshot or image | Visual only | `design-review` from the render; code-level domains marked Not verified |
-| Only a description, no code, no image | Description | `laws-of-ux` audit or build rules on the described flow; `map-user-flows` if several screens |
-| Figma / Penpot link | Design file | Treat as visual only; the Figma or Penpot MCP tools fetch the frame if available |
+| **persuade** | landing, marketing, portfolio, launch and onboarding screens, store pages | `art-direction`; design is the product |
+| **operate** | tools, dashboards, settings, editors, HMIs, inboxes, shells | `better-interface`; density, keyboard, states; quiet rules from `slop-tells.md` |
+| **read** | docs, articles, changelogs, help | calm reading column, identity in the frame |
 
-State the resolved stack in the report. Never propose a fix in another stack's idiom.
-
-## Step 3. Pick the review depth
+## Step 4. Review depth
 
 | Situation | Run |
 | --- | --- |
-| Quick opinion, one screen, user wants it fast | `design-review` only |
-| Pre-ship, "is it ready", full app or flow | `better-interface` full, with `laws-of-ux` areas loaded for the Why cells |
-| Nothing is "broken" but something feels off | `better-interface` full plus `laws-of-ux` ethics and feedback-states areas (subtle defects live there) |
-| Dense tool, editor, shell, launcher | `better-interface` with keyboard and density emphasis; motion skill runs in reject-heavy mode |
-| Marketing page, landing, pricing, onboarding | `design-review` plus `laws-of-ux` navigation-choices and onboarding-flows areas |
+| Quick opinion, one screen | `design-review` only |
+| Pre-ship, whole app or flow | `better-interface` full with `laws-of-ux` areas for the Why cells |
+| "Nothing is broken but something feels off" | `better-interface` full plus ethics and feedback-states areas |
+| Dense tool, editor, shell, launcher | `better-interface` with density allowance; motion in reject-heavy mode |
+| TV, watch, embedded | `better-interface` with that platform file leading; accessibility domain reads focus and input model first |
+| Marketing, landing, pricing, onboarding | `design-review` + `art-direction` critique passes |
 
-Never run `better-interface` and `design-review` on the same scope in one turn. They overlap; pick one and let the other's checklist feed it.
+Never run `better-interface` and `design-review` on the same scope in one turn.
 
-## Step 4. Run the playbook
+## Step 5. Run the playbook
 
-`references/playbooks.md` has the step sequence for every use case: new native app, company website, landing or pricing page, redesign, pre-ship audit, PR review, motion pass, spacing cleanup, component cleanup, PRD from code, onboarding, forms and checkout, dashboards, accessibility pass, theme and dark mode, i18n, and quick question. Read the matching playbook before invoking anything. Playbooks say which steps are read-only and where the user must confirm before edits.
+`references/playbooks.md` has the sequence for every use case, including which steps are read-only and where the user confirms before edits. Read the matching playbook before invoking anything.
 
-## Step 5. Merge into one report
+## Step 6. Merge into one report
 
-Specialists use different severity vocabularies. Normalize to one scale:
+Unified severity:
 
-| Unified | better-interface | design-review | laws-of-ux | analyze / flows |
+| Unified | better-interface | design-review | laws-of-ux | analyze / flows / break-ui |
 | --- | --- | --- | --- | --- |
-| **Blocking** | HIGH | 🔴 Blocking | Defect High | P1 |
-| **Important** | MEDIUM | 🟠 Important | Defect Medium, Risk | P2 |
-| **Polish** | LOW | 🟡 Polish | Defect Low, Suggestion | P3 |
+| **Blocking** | HIGH | 🔴 | Defect High | P1 |
+| **Important** | MEDIUM | 🟠 | Defect Medium, Risk | P2 |
+| **Polish** | LOW | 🟡 | Defect Low, Suggestion | P3 |
 
-Rules of the merge:
+Merge rules:
 
-- One root cause is one finding, with every location. If two skills report the same symptom, keep the row from the skill that owns the rule (ownership table below) and fold the other's Why into it.
-- Every finding keeps `file.rs:line` or the exact screen and element. No evidence, no finding.
-- Cite at most one or two Laws of UX per finding, only when they explain the harm.
-- Cap: 15 findings for a full review, 5 for quick. Blocking findings never fall off the cap; say how many the cap excluded.
-- Read-only by default. Edits happen only when the user asked for them or the playbook step says "after confirmation". Rust edits follow `rust-engineering`; run `cargo check` after.
+- One root cause is one finding with every location. The owner of the rule keeps the row; others fold their Why into it.
+- Every finding keeps `file:line` or the exact screen and element. No evidence, no finding.
+- Purpose test on every visual finding and every build decision (`references/slop-tells.md`): a technique with no stated purpose is a finding; removing it without adding substance is also a finding.
+- At most one or two Laws of UX per finding.
+- Cap 15 (full) or 5 (quick); Blocking never falls off the cap.
+- Read-only by default. Edits only when asked or where a playbook step says "after confirmation". Rust edits follow `rust-engineering` and `cargo check`.
+- Optional numbered mode: when the user wants to pick, list findings numbered, wait, fix only the numbers chosen, report.
 - End with the single highest-leverage change and a verdict: `Block`, `Approve`, or `Ship with polish list`.
 
 ### Rule ownership
 
-| Topic | Owner | Others defer |
-| --- | --- | --- |
-| Keyboard, focus, accessible names, hit areas, reduced motion | `better-interface` accessibility domain | `design-review` §6–7, `laws-of-ux` Fitts |
-| Grouping, alignment, hierarchy, density | `better-interface` layout domain | `laws-of-ux` Gestalt laws explain Why |
-| Copy, errors, empty states, labels | `better-interface` writing domain | `laws-of-ux` feedback-states |
-| Type scale, measure, truncation | `better-interface` typography domain | `design-review` §2 |
-| Contrast numbers | `design-review` §4 | everyone cites its measurement |
-| Whether motion belongs at all | `find-animation-opportunities` | `better-interface` polish assumes it belongs |
-| Spacing values vs the scale | `spacing-audit` | `better-interface` layout reports only the systemic pattern |
-| Duplicates, orphans, naming drift | `analyze-components` | — |
-| Missing screens and states across a flow | `map-user-flows` | `design-review` §6 reports per screen |
-| Dark patterns, defaults, consent | `laws-of-ux` ethics | reported as Blocking by whoever finds them |
-| Choice counts, option limits, thresholds | `laws-of-ux` | — |
-| Framework API names and fixes | `rust-gui-map` | every Rust fix is written from it |
+| Topic | Owner |
+| --- | --- |
+| Keyboard, focus, names, hit areas, reduced motion | `better-interface` accessibility (platform file sets the numbers) |
+| Grouping, alignment, hierarchy, density | `better-interface` layout |
+| Copy, errors, empty states | `better-interface` writing |
+| Type scale, measure, truncation | `better-interface` typography |
+| Contrast numbers | `design-review` (contrast script) |
+| Whether motion belongs | `find-animation-opportunities`; rules in `motion-standards.md` |
+| Building one animation | `animate` |
+| Fixing existing motion | `improve-animations` |
+| Spacing values vs scale | `spacing-audit` |
+| Duplicates, orphans, naming, hardcoded tokens | `analyze-components` |
+| Tokens, theme, DESIGN.md | `design-source` |
+| Direction, imagery, tells on persuade surfaces | `art-direction` |
+| Missing screens and states across a flow | `map-user-flows` |
+| Worst-case data | `break-ui` |
+| Dark patterns, defaults, choice counts, thresholds | `laws-of-ux` |
+| API names per framework | `stack-map` |
+| Platform conventions | `references/platforms/*` |
 
 ## Report skeleton
 
 ```markdown
 # UX report: <scope>
-**Intent:** … · **Stack:** … · **Depth:** … · **Skills run:** …
+**Intent:** … · **Stack:** … · **Form factor:** … · **Register:** … · **Depth:** … · **Skills run:** …
 **Assumed primary task and user:** …
 **Verdict:** Block | Approve | Ship with polish list — one sentence why.
 
@@ -107,24 +126,23 @@ Rules of the merge:
 ## Polish
 ## Risks (need data to confirm)
 ## Suggestions (product decisions, stated as assumptions)
-## Keep (what already works)
+## Keep
 ## Verification run
 ## Next step
 ```
 
-Headless sections are omitted. For build intents the report is replaced by the built artifact plus a short "UX decisions" note (3 to 6 bullets, decision + law), then the review loop runs on what was built.
+Empty sections are omitted. Build intents replace the report with the artifact plus a UX decisions note (3–6 bullets, decision + law), then the review loop runs on what was built.
 
 ## Manual invocation
 
-Skill names are plain: `definitive-ux`, `design-review`, `better-interface`, `laws-of-ux`, `find-animation-opportunities`, `spacing-audit`, `analyze-components`, `map-user-flows`, `rust-gui-map`. Claude Code namespaces them under the plugin (`/definitive-ux:design-review`); Codex, Cursor, Gemini CLI, OpenCode, Copilot and other Agent Skills hosts use the bare name. A direct call skips the router but still uses the unified severity scale and the report skeleton.
+Bare skill names: `definitive-ux`, `stack-map`, `laws-of-ux`, `design-review`, `better-interface`, `find-animation-opportunities`, `animate`, `improve-animations`, `spacing-audit`, `analyze-components`, `design-source`, `art-direction`, `map-user-flows`, `break-ui`. Claude Code namespaces them under the plugin (`/definitive-ux:design-review`); other hosts use the bare name. A direct call skips the router but keeps the severity scale and the skeleton.
 
-Triggering: Claude Code gets a `UserPromptSubmit` hook from the plugin. Every other host relies on the skill descriptions plus the `AGENTS.md` snippet in `templates/AGENTS.snippet.md`, which tells the agent to load `definitive-ux` first for any UI/UX work.
+Triggering: Claude Code gets a `UserPromptSubmit` hook from the plugin; other hosts rely on descriptions plus `templates/AGENTS.snippet.md`.
 
-## Interplay with other installed skills
+## Other tools
 
-- `rust-engineering` and `freya`: mandatory for any Rust edit a playbook makes; they own code style, this plugin owns UX.
-- `impeccable`, `frontend-design`, `design-taste-frontend`, `high-end-visual-design` and similar web aesthetics skills: for web build intents, run the chosen aesthetics skill for visual direction and let this plugin own usability, accessibility, states and the review loop.
-- `codebase-memory-mcp`: used by `analyze-components`, `map-user-flows` and every reach estimate. Index before structural questions.
-- `run`: launches the app for screenshots when a visual claim needs a render.
+- `rust-engineering` (if installed) for any Rust edit; `freya` skill for Freya idioms beyond the map.
+- `codebase-memory-mcp` for reach and callers when available; otherwise the host's symbol search.
+- The `run` skill, `freya-testing`, `egui_kittest`, `slint-viewer`, browser tooling: whenever a visual claim needs a render.
 
-Answer in the user's language. Law and skill names stay in English.
+Answer in the user's language. Law, skill and API names stay in English.

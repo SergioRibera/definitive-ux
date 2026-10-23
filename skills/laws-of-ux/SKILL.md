@@ -18,7 +18,7 @@ Turn the Laws of UX into concrete decisions about *this* interface: an observabl
 
 Area files in `references/areas/`: `layout-content.md` (hierarchy, grouping, emphasis) · `navigation-choices.md` (nav, option counts, pricing) · `forms-input.md` (forms, validation, selects, targets, code red flags per stack) · `feedback-states.md` (latency, loading, empty, error, success) · `onboarding-flows.md` (onboarding, multi-step, progress) · `ethics.md` (defaults, dark patterns). `references/laws.md` has every law condensed with its source link, for theory or citation requests only.
 
-**Stack idioms** come from elsewhere: Rust native from the `rust-gui-map` skill, web and mobile from `definitive-ux/references/web-map.md`. This skill names the rule and the threshold; the map names the API.
+**Stack idioms** come from elsewhere: Rust native from the `stack-map` skill, web and mobile from `stack-map/maps/web.md`. This skill names the rule and the threshold; the map names the API.
 
 **Quick answers are short:** under 200 words, no tables, at most one small snippet, one law. Answer, reason, fix. Longer only on request.
 

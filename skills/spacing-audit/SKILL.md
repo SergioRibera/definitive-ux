@@ -5,11 +5,11 @@ description: 'Audit padding, gaps and margins in UI code of any stack (Freya .pa
 
 # Spacing audit
 
-> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `definitive-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
+> **Stack:** Rust native crates load the `stack-map` skill for every API name. Web and mobile projects use `stack-map/maps/web.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
 
 Check a layout against a 4/8pt spacing scale, report every value that is off the grid, and snap it to the nearest correct step. The goal is consistent, predictable rhythm that is easy to maintain. Adapted from the Figma community `spacing-audit` skill for Rust source instead of auto-layout frames.
 
-Load the `rust-gui-map` skill first to resolve the framework and know which calls carry spacing.
+Load the `stack-map` skill first to resolve the framework and know which calls carry spacing.
 
 ## The scale
 

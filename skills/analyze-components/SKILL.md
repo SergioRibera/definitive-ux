@@ -5,7 +5,7 @@ description: 'Inventory and audit every UI component in a UI codebase (Rust: Fre
 
 # Analyze components
 
-> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `definitive-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
+> **Stack:** Rust native crates load the `stack-map` skill for every API name. Web and mobile projects use `stack-map/maps/web.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
 
 Audit every component used in a scope, build a structured audit document, then fix the issues found. Adapted from Amy Ha's Figma `analyze-components`. The Figma canvas layout contract is gone; the output is a markdown document and the analysis runs on the code graph.
 
@@ -16,7 +16,7 @@ Resolve scope once and record it in the document subtitle:
 - A crate, module or directory named in the request.
 - Otherwise the crate's UI modules (`ui/`, `components/`, `views/`, `screens/`, `widgets/`).
 
-Load `rust-gui-map` to resolve the framework. Then `list_projects` and `index_repository` from `codebase-memory-mcp` (default `moderate`). Every "who uses this" answer in this skill comes from `query_graph`, `search_code` or `trace_path`, never from grep alone.
+Load `stack-map` to resolve the framework. Then `list_projects` and `index_repository` from `codebase-memory-mcp` (default `moderate`). Every "who uses this" answer in this skill comes from `query_graph`, `search_code` or `trace_path`, never from grep alone.
 
 ## 2. What a component is
 
@@ -75,7 +75,7 @@ Only after the document is written and the user approves the plan (or asked for 
 1. **Orphans**: delete the component and its tests; run `cargo check`.
 2. **Duplicates**: keep the better-named, more-used one; port missing props; swap every call site found by `query_graph`; delete the loser; `cargo check`.
 3. **Hardcoded styles**: replace with the existing token; if the token is missing, add it to the theme module in the project's idiom.
-4. **Missing states**: add the branch using the framework's pattern from `rust-gui-map`.
+4. **Missing states**: add the branch using the framework's pattern from `stack-map`.
 5. **Naming drift**: rename with `rust-analyzer` LSP rename when available, else careful search and replace; `cargo check`.
 
 Follow the `rust-engineering` skill for every edit. After the batch, run `detect_changes` or re-index, then re-run the inventory and append a "Fixed" column to the document.

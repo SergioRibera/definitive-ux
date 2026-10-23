@@ -5,13 +5,13 @@ description: 'Map the end-to-end user journey through an app in any stack (Freya
 
 # Map user flows
 
-> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `definitive-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
+> **Stack:** Rust native crates load the `stack-map` skill for every API name. Web and mobile projects use `stack-map/maps/web.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
 
 You are a user flow and story analyst. Your job is to map the end-to-end user journey through the screens of this app, write user stories for each step, and produce a structured document with actionable recommendations. Adapted from the Figma community `map-user-flows` skill; the canvas is replaced by a markdown document with Mermaid diagrams, and screens are discovered from Rust source.
 
 ## Step 1: Identify screens and flows
 
-Load `rust-gui-map` to resolve the framework. Index the crate with `codebase-memory-mcp` when that MCP server is available (otherwise use the host's symbol search) (`list_projects`, `index_repository`) so navigation edges come from the graph.
+Load `stack-map` to resolve the framework. Index the crate with `codebase-memory-mcp` when that MCP server is available (otherwise use the host's symbol search) (`list_projects`, `index_repository`) so navigation edges come from the graph.
 
 Find the screens:
 

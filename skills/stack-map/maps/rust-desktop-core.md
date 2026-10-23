@@ -1,9 +1,7 @@
----
-name: rust-gui-map
-description: 'Framework API map for reviewing Rust desktop UIs built with Freya 0.5, egui 0.32 or gpui 0.2. Part of the definitive-ux plugin. Load it before any UI review, audit or motion skill runs on a Rust GUI crate (better-interface, design-review, find-animation-opportunities, spacing-audit, analyze-components, map-user-flows). Tells those skills how to detect the framework, where styles, states, focus, accessibility, animation and navigation live in code, and which web concept maps to which Rust API.'
+<!-- verified: 2026-10-22 against local sources: freya 0.5.0-rc.8 (contributions clone), egui 0.32.1 (contributions clone), gpui 0.2.2 (sonora pinned rev 5ff26c7) -->
 ---
 
-# Rust GUI map
+# Rust desktop core map: Freya, egui, gpui
 
 Shared recon for the UI review skills. Resolve the framework once, then use the matching column everywhere. Never propose a fix written for another framework or for CSS.
 

@@ -5,7 +5,7 @@ description: 'Cross-discipline review of a UI in any stack (Rust desktop with Fr
 
 # Review the interface as one system
 
-> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `definitive-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
+> **Stack:** Rust native crates load the `stack-map` skill for every API name. Web and mobile projects use `stack-map/maps/web.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
 
 Adapted from Jakub Krehel's `better-interface` (jakub.jp). The rulebook is his. The inspection surface is Rust source and a running native window instead of DOM and CSS.
 
@@ -15,7 +15,7 @@ A strong interface is not five independent audits stapled together. Position and
 
 ### 0. Load the framework map
 
-Load the `rust-gui-map` skill first. It tells you which framework the crate uses and where every concept below lives in that framework's API. Every fix in this review is written in that framework's idiom. Never propose CSS, HTML or a different Rust toolkit.
+Load the `stack-map` skill first. It tells you which framework the crate uses and where every concept below lives in that framework's API. Every fix in this review is written in that framework's idiom. Never propose CSS, HTML or a different Rust toolkit.
 
 ### 1. Resolve scope and mode
 
@@ -32,7 +32,7 @@ A request naming a branch, commit range or uncommitted diff is a change review. 
 
 ### 2. Recon before judgment
 
-From `rust-gui-map`: framework, theme or token module, component crate, supported window sizes, test and preview commands. Index the crate with `codebase-memory-mcp` when that MCP server is available (otherwise use the host's symbol search) (`list_projects`, `index_repository`) so you can ask who renders a component and how far a shared fix reaches. Read `CLAUDE.md`, `AGENTS.md`, a design or theme doc. Name what you found, or that there is none. A documented convention settles taste. It never excuses a keyboard, focus or contrast failure.
+From `stack-map`: framework, theme or token module, component crate, supported window sizes, test and preview commands. Index the crate with `codebase-memory-mcp` when that MCP server is available (otherwise use the host's symbol search) (`list_projects`, `index_repository`) so you can ask who renders a component and how far a shared fix reaches. Read `CLAUDE.md`, `AGENTS.md`, a design or theme doc. Name what you found, or that there is none. A documented convention settles taste. It never excuses a keyboard, focus or contrast failure.
 
 ### 3. Review in this order
 

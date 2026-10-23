@@ -1,6 +1,6 @@
 # Design review rubric (Rust desktop UI)
 
-Check each dimension. Prefer concrete measurements over impressions. API names per framework are in the `rust-gui-map` skill.
+Check each dimension. Prefer concrete measurements over impressions. API names per framework are in the `stack-map` skill.
 
 ## 1. Visual hierarchy and layout
 - One clear focal point; obvious primary action. The eye knows where to go first.

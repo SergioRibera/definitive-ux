@@ -1,3 +1,4 @@
+<!-- verified: 2026-10-23, idioms from the original web-authored skills (better-interface, design-review, Superfuture, Emil Kowalski); stable web platform APIs -->
 # Web and mobile map
 
 Used when the stack is not Rust native. The specialist rules were written for the web originally, so most idioms are direct. This file lists the ones the Rust-adapted skills translated, so they can be translated back.

@@ -21,7 +21,7 @@
 **Code red flags (grep when reviewing source)**
 `<div onClick>` · inputs without `type`/`autoComplete` · state reset in a validation-error branch · `await` in a handler with no loading/disabled/try-catch · several buttons with identical primary classes · `<select>` mapping hundreds of options · `text-red-500` as the only error signal · `defaultChecked`/`useState(true)` on consent · `<a>` without `href` used as a button.
 
-**Code red flags, Rust native** (see `rust-gui-map` for the APIs)
+**Code red flags, Rust native** (see `stack-map` for the APIs)
 Freya: `rect().on_press(..)` with no `a11y_role`/`a11y_focusable` · `Input` with only a placeholder and no adjacent `label()` · validation branch that calls `state.set(Default::default())` · `on_press` handler that spawns a task with no `FutureState` or loading branch · several `Button`s sharing the primary theme next to each other · a `Select` or `Menu` built from hundreds of items with no filter · error shown only by `.color(theme.danger)` with no text or icon · `Switch`/`Checkbox` for consent initialized `true`.
 egui: `Sense::click()` on a painted rect with no `widget_info` · `TextEdit` with `hint_text` as the only label · `ui.button("Pay")` whose handler awaits with no `spinner()` or `add_enabled(false)` · `ComboBox` listing hundreds of entries · selection state shown by `Color32` only · `bool` consent fields defaulting to `true`.
 gpui: `div().on_click(..)` with no `.id`, `.track_focus` or key binding · an input view with no label element · `.bg(red())` as the only error signal · three siblings with identical primary styling.

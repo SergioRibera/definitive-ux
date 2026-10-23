@@ -5,7 +5,7 @@ description: 'Search a UI codebase in any stack (Rust desktop with Freya, egui o
 
 # Finding animation opportunities
 
-> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `definitive-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
+> **Stack:** Rust native crates load the `stack-map` skill for every API name. Web and mobile projects use `stack-map/maps/web.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
 
 Adapted from Emil Kowalski's `find-animation-opportunities` (emilkowal.ski). The gate, the posture and the output are his. The recipes are rewritten for Freya, egui and gpui.
 
@@ -76,7 +76,7 @@ Decoration on functional, dense UI hinders. A plot in a monitoring tool, a code 
 
 ## Where to hunt
 
-Load the `rust-gui-map` skill to know which API each hint means in the detected framework. Sweep these seams:
+Load the `stack-map` skill to know which API each hint means in the detected framework. Sweep these seams:
 
 **Feedback gaps**
 - Pressable elements with no pressed style. Freya: `.on_press` on a `rect()` with no `on_pointer_down`/status state and no `.scale`. egui: custom `Sense::click()` rects with no `active` visual. gpui: `.on_click` with no `.active(..)`.

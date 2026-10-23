@@ -1,7 +1,7 @@
 {
   "name": "definitive-ux",
-  "version": "0.2.0",
-  "description": "The definitive native UI/UX skill set: one orchestrator that routes any design, build, redesign, audit, motion, spacing, component or flow request to the right specialist skill, with first-class support for Rust desktop apps (Freya, egui, gpui) and sane fallbacks for web and mobile.",
+  "version": "0.3.0",
+  "description": "The definitive UI/UX skill set: one orchestrator routing any design, build, redesign, review, polish, motion, spacing, component, token or flow request to specialist skills, native first (Rust: Freya, egui, gpui, Slint, Iced, Dioxus, Leptos, ratatui) and generic by design (web, SwiftUI, Compose, Flutter, React Native), with platform conventions for desktop, mobile, TV, watch, embedded and terminal.",
   "author": { "name": "Sergio Ribera", "url": "https://github.com/SergioRibera" },
   "homepage": "https://github.com/SergioRibera/definitive-ux",
   "repository": "https://github.com/SergioRibera/definitive-ux",

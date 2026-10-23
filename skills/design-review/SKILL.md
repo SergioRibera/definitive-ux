@@ -1,11 +1,11 @@
 ---
 name: design-review
-description: 'Senior-style, prioritized design critique of a UI in any stack (Rust desktop with Freya, egui or gpui; web; mobile) from a screenshot, a running window or component source. Covers visual hierarchy, typography, spacing, color and contrast, motion, component states, window resizing, accessibility, copy and consistency. Returns findings ranked Blocking, Important, Polish, each with a specific fix in the project''s framework idiom, and can apply the safe ones with --apply. Use when the user asks for a design review, crit, craft check or "does this look right" before a review, handoff or release. Adapted for local Rust code from Superfuture''s design-review skill. Usually invoked by the definitive-ux router; can be called directly.'
+description: 'Senior-style, prioritized design critique of a UI in any stack (Rust desktop with Freya, egui or gpui; web; mobile) from a screenshot, a running window or component source. Covers visual hierarchy, typography, spacing, color and contrast, motion, component states, window resizing, accessibility, copy and consistency. Returns findings ranked Blocking, Important, Polish, each with a specific fix in the project''s framework idiom, and can apply the safe ones with --apply. Computes contrast with a bundled script, judges renders with fourteen visual passes, and can score five dimensions 0 to 4 for audits and before/after baselines. Use when the user asks for a design review, crit, craft check or "does this look right" before a review, handoff or release. Adapted for local Rust code from Superfuture''s design-review skill. Usually invoked by the definitive-ux router; can be called directly.'
 ---
 
 # design-review
 
-> **Stack:** Rust native crates load the `rust-gui-map` skill for every API name. Web and mobile projects use `definitive-ux/references/web-map.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
+> **Stack:** Rust native crates load the `stack-map` skill for every API name. Web and mobile projects use `stack-map/maps/web.md` and the original web idioms. The rules below are stack-agnostic; only the fixes change idiom. Severity maps to the unified scale in the `definitive-ux` orchestrator when run through it.
 
 Adapted from Joey Primiani's Superfuture `design-review`. The rubric is his. The telemetry ping and the license-gated Pro tier were removed; everything runs locally against Rust source and a native window.
 
@@ -13,7 +13,7 @@ A senior-level craft critique. Opinionated and specific, not a checklist dump.
 
 ## 1. Acquire the artifact
 
-Resolve the stack first: Rust crates load the `rust-gui-map` skill; web and mobile use `definitive-ux/references/web-map.md`.
+Resolve the stack first: Rust crates load the `stack-map` skill; web and mobile use `stack-map/maps/web.md`.
 
 - **Screenshot or image**: read it. Best for visual judgment (hierarchy, type, spacing, color). Ask for the window size and theme (light or dark) if not obvious.
 - **Component or screen source** (`.rs`): read it plus the theme or token module it pulls from. Enables implementation-level fixes with `file:line` references and `--apply`.
@@ -24,10 +24,32 @@ Index the crate with `codebase-memory-mcp` when the review spans more than one f
 
 ## 2. Evaluate against the rubric
 
+
+Load the platform file from `definitive-ux/references/platforms/` for the form factor; it sets the thresholds (hit areas, type sizes, focus model). Load `definitive-ux/references/slop-tells.md` for the purpose test and the tells.
 Review every dimension in `checklist.md` (same directory):
 hierarchy and layout · typography · spacing and rhythm · color and contrast · motion · component states · accessibility · window sizes · content and copy · consistency and theme.
 
 Check actual numbers where possible: contrast ratios from the theme's color values, line heights, measure in characters, hit target px, animation durations in `.time(..)`, `animate_bool_with_time`, `Duration::from_millis`. Numbers beat vibes.
+
+**Contrast is computed, never estimated.** Run `scripts/contrast-check.py "#fg" "#bg"` or `node scripts/contrast-check.mjs "#fg" "#bg"` (next to this file; whichever runtime exists) for every text and UI pair you judge; quote the ratio. Grey-on-grey pairs are the usual hallucination: `#555555` on black is 2.8:1 and fails. When no runtime is available, apply the WCAG formula by hand and say so.
+
+## 2b. Look at the render
+
+When a screenshot or a running app is available, judge the picture before the code, with the passes from `art-direction` (one second then five, squint, cover the logo, edges, space and frame, type, color, images, tells, controls, states, small window, motion, substance). Note what each pass found; those notes become findings only with evidence.
+
+## 2c. Score (optional, for audits and before/after)
+
+Five dimensions, 0 to 4 each, when the user wants a number or a baseline for a redesign:
+
+| Dimension | 0 | 2 | 4 |
+| --- | --- | --- | --- |
+| Accessibility | unusable by keyboard or screen reader | labels exist, order or scaling breaks | labeled, ordered, scales, reduced motion honored |
+| Performance felt | janky, slow launch, layout jumps | partial | instant feedback, smooth on the target device |
+| Theming | hardcoded everything | tokens exist, used inconsistently | semantic throughout, both appearances first-class |
+| Platform conformance | a web port, nothing native | some off-platform controls | a fluent user trusts every screen |
+| Adaptivity | breaks at the minimum size | survives, awkwardly | holds at every size, density and text scale |
+
+Report the five numbers and the sum out of 20; the findings explain every score below 3.
 
 ## 3. Report: ranked, concrete, scannable
 
