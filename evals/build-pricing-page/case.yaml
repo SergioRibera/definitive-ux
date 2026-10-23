@@ -4,4 +4,6 @@ expected_outcome: |
   A working single-file pricing.html with Tailwind CDN. Pro is visually emphasized as the recommended plan,
   there is one dominant CTA per plan with Pro's standing out, Enterprise is de-emphasized or separated,
   feature lists are scannable/chunked or comparable, and the page follows familiar pricing conventions.
-  The response briefly explains key UX decisions.
+  A direction sheet exists before the page, the typeface and palette are decided from the subject rather than the
+  category default, the page carries a real picture or interface fragment, and the look-and-fix critique ran even
+  without a browser. The response briefly explains key UX decisions with their sources.

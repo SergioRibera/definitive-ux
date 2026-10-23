@@ -31,11 +31,13 @@ Trigger: "quiero hacer una web para mi empresa", "landing", "sitio".
 
 Trigger: "página de precios", "planes", "pricing".
 
-1. `laws-of-ux` `areas/navigation-choices.md` pricing block: 3 to 4 self-serve tiers in the row, enterprise separated, one recommended plan, differentiators only, comparison table below.
-2. Build in the stack's idiom.
-3. `design-review`: Von Restorff on the recommended plan, Similarity across cards, hit areas on toggles.
-4. `laws-of-ux` ethics: no fake scarcity, no confirmshaming on downgrade.
+Pricing is a persuade surface. Run **P20** in full (gate, direction sheet, imagery, critique passes) with these constraints carried as the floor:
 
+1. `laws-of-ux` `areas/navigation-choices.md` pricing block: 3 to 4 self-serve tiers in the row, enterprise separated, one recommended plan (badge plus structure, never color alone), differentiators only on cards, the full matrix in a comparison table below.
+2. `laws-of-ux` ethics: no fake scarcity, no confirmshaming, cancel and downgrade stated plainly, trial terms explicit.
+3. `design-review` on the result: Von Restorff on the recommended plan, Similarity across cards, hit areas on the period toggle, contrast computed.
+
+A pricing page built from the three constraints alone, without the direction sheet, is the stock SaaS pricing page and fails the build.
 ## P4. Redesign an existing screen or app
 
 Trigger: "rediseñar", "modernizar", "se ve viejo", "hazlo premium", "mejora la UI".
@@ -194,9 +196,9 @@ Trigger: "landing", "web para mi empresa", "página de producto", "portfolio", "
 
 1. Stack and form factor (web most often; a native showcase screen sometimes).
 2. `design-source` if the product has no tokens yet (the direction's palette and type become the semantic layer).
-3. `art-direction`: inventory, argument, direction sheet, imagery plan. **confirm** the direction in one line before building when the brief is vague.
+3. `art-direction` gate: `design/direction.md` with inventory, argument, three directions, the chosen one and the sheet, written before any markup. **confirm** the chosen direction in one line when the brief is vague; otherwise state it and continue.
 4. Build in the stack's idiom.
-5. `art-direction` look-and-fix passes on the render, then `design-review` for Blocking items.
+5. `art-direction` look-and-fix passes on the render, or in degraded form from the markup when nothing can render (say so); then `design-review` for Blocking items.
 6. `find-animation-opportunities` for the one signature moment.
 
 Replaces P2 for web sites; P2 steps 3 to 6 now live here.

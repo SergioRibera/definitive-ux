@@ -16,7 +16,7 @@ Pick one primary intent. Secondary intents become support steps.
 | Intent | Signals (ES/EN) | Primary skill |
 | --- | --- | --- |
 | **Question** | one specific doubt, a threshold, "which principle applies" | `laws-of-ux` quick mode |
-| **Build new** | "quiero hacer", "crea", "arma", "build", new screen/app/site/landing/pricing | `design-source` if no theme exists → `art-direction` (persuade) or `laws-of-ux` build rules (operate/read) → build → review loop |
+| **Build new** | "quiero hacer", "crea", "arma", "build", new screen/app/site/landing/pricing/onboarding | `design-source` if no theme exists → **persuade**: `art-direction` gate (direction.md before any markup; the laws are constraints inside it) · **operate/read**: `laws-of-ux` build rules + platform file → build → review loop |
 | **Redesign** | "rediseñar", "modernizar", "se ve viejo", "hazlo premium", "menos genérico" | `analyze-components` → `design-review` baseline → plan → build → review loop |
 | **Review / audit** | "revisa", "critica", "auditar", "antes de lanzar", "is it ready" | `better-interface` full, or `design-review` fast; see Step 4 |
 | **Change review** | branch, PR, diff, "lo que cambié" | `better-interface` change-scoped |
@@ -47,7 +47,7 @@ Every surface is one of three. It changes which rules lead:
 
 | Register | Surfaces | Leads |
 | --- | --- | --- |
-| **persuade** | landing, marketing, portfolio, launch and onboarding screens, store pages | `art-direction`; design is the product |
+| **persuade** | landing, marketing, pricing, signup, portfolio, launch and onboarding screens, store pages | `art-direction` with its gate; design is the product; `laws-of-ux` rules are the floor |
 | **operate** | tools, dashboards, settings, editors, HMIs, inboxes, shells | `better-interface`; density, keyboard, states; quiet rules from `slop-tells.md` |
 | **read** | docs, articles, changelogs, help | calm reading column, identity in the frame |
 
@@ -82,7 +82,7 @@ Merge rules:
 
 - One root cause is one finding with every location. The owner of the rule keeps the row; others fold their Why into it.
 - Every finding keeps `file:line` or the exact screen and element. No evidence, no finding.
-- Purpose test on every visual finding and every build decision (`references/slop-tells.md`): a technique with no stated purpose is a finding; removing it without adding substance is also a finding.
+- Purpose test on every visual finding and every build decision (`references/slop-tells.md`): a technique with no stated purpose is a finding; removing it without adding substance is also a finding. On a persuade build, a missing `design/direction.md`, a default typeface or a category palette is Blocking on the build itself, and the category-reflex check runs before delivery.
 - At most one or two Laws of UX per finding.
 - Cap 15 (full) or 5 (quick); Blocking never falls off the cap.
 - Read-only by default. Edits only when asked or where a playbook step says "after confirmation". Rust edits follow `rust-engineering` and `cargo check`.

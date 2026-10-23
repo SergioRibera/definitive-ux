@@ -13,6 +13,14 @@ A page built by a model is the average of every page it has seen: nothing wrong,
 
 Persuade register only: the visitor came to be convinced. Operate and read surfaces (dashboards, settings, docs) follow `better-interface` and `design-review` with the quiet rules in `slop-tells.md`; a product site that shows its app is persuade, and the app fragments on it follow the app-screen rules for their insides.
 
+## The gate (non-negotiable)
+
+No markup, no component, no stylesheet is written until `design/direction.md` exists and contains, in this order: the inventory (8 to 12 items), the argument (one claim and proof per section), three candidate directions in two lines each, the chosen one with the sentence that says why only this subject could own it, and the direction sheet (type system, palette as proportions with values from the subject, hero composition, a blueprint per section, imagery plan, the one signature motion). When the router or a playbook hands you a build, the first file you write is that one. A build that starts from "the rules say four cards and a strip" has skipped this skill; the rules are the floor, not the direction.
+
+**Decided, not defaulted.** Every one of these must cite the inventory item it came from, in the sheet: typeface, palette, hero composition, the imagery, the signature motion. A choice with no inventory source is a default. The defaults this skill exists to prevent: the system font stack or the one typeface every generated page uses; the category palette (navy and green for finance, cream and terracotta for anything artisanal, near-black and neon for developer tools, soft pink and sage for wellness); the stock section sequence; no imagery. Run the category-reflex check at two altitudes before fixing the sheet: first order, could someone guess the palette and type from the category alone? Second order, could they guess the aesthetic family from the category plus the obvious anti-reflex ("fintech that is not navy becomes terminal dark mode")? If either answer is yes, the direction is not yet a decision.
+
+**Laws are constraints, not the design.** Pricing, onboarding and signup pages come with rules from `laws-of-ux` (one recommended plan, differentiators only, enterprise separated, verb-first buttons). Keep every one of them and still run the gate: the rules say what must be true, the direction says what it looks like.
+
 ## The run
 
 ### 1. Read the brief and inventory the subject
@@ -41,6 +49,7 @@ Tokens through `design-source` (the direction's palette and type become the sema
 
 ### 6. Look, then fix
 
+Render at three widths and judge the screenshots, never the code. Use whatever can render: the `run` skill, a browser automation tool, a headless browser, a screenshot the user takes. **With no renderer available, the loop still runs in degraded form**: open the HTML and read it as a stranger would, top to bottom, answering every pass below from the markup and the computed sizes you can infer; say in the report that the critique was done without a render and name the three things a render would settle (actual measure, image crops, motion). Skipping the passes because there is no browser is not allowed.
 Render at three widths (mobile, tablet, desktop) and judge the screenshots, never the code. Fourteen passes, each on its own:
 
 1. One second, then five: what did you see? There must be one answer. Can a stranger say what this is, who it is for and what to do next?
@@ -62,4 +71,4 @@ Fix the worst finding, render again, stop when the one-second pass gives one ans
 
 ## Output
 
-The direction sheet (kept in `design/direction.md`), the argument, the built page, the credits for any found imagery, and a UX decisions note (3–6 bullets, decision + law). Then the router's review loop runs `design-review` on the result.
+`design/direction.md` (written first, kept), the built page, the credits for any found imagery, the degraded-or-rendered critique with what was fixed, and a UX decisions note (3–6 bullets, each decision naming its inventory source and, where one applies, its law). Then the router's review loop runs `design-review` on the result.
