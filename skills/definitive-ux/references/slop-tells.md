@@ -90,3 +90,22 @@ In review: a tell is a finding only when it fails the purpose test for *this* su
 A page can avoid every tell above and still read as generated, because nothing in it was chosen. The signs: the system font stack or the one typeface every generated page uses; a palette anyone could guess from the category; the stock section sequence; no picture of the subject's world; every size and gap from the framework defaults. These are not bans; they are the absence of a decision, and the fix is the `art-direction` gate: inventory, argument, direction sheet, each choice citing its source.
 
 **Category-reflex check, two altitudes.** First order: could someone guess the theme, palette and type from the category alone (finance → navy and green; artisanal → cream and terracotta; developer tool → near-black and neon; wellness → pink and sage; kids → primary colors and rounded everything)? Second order: could they guess the aesthetic family from the category plus the obvious anti-reflex (fintech that is not navy → terminal dark mode; artisanal that is not cream → broadsheet serif)? Rework until neither answer is obvious. On operate surfaces the check still applies to the brand layer (accent, type, icon set), not to the controls.
+
+## Performance tells (the costume of having an idea)
+
+When a generator is told to decide, it performs deciding. The result reads as generated more loudly than the first-wave defaults did, because every move says "look, a choice". Banned on product surfaces (SaaS pages, pricing, signup, docs, tools); earned on brand surfaces only when the inventory names the reason:
+
+| Tell | Instead |
+| --- | --- |
+| Page styled as the object it sells: invoice, ticket, receipt, boarding pass, passport | the object as one real fragment, the page as a page |
+| Rubber stamps, rotated or tilted badges, "hand-placed" elements | a badge in the flow, aligned |
+| Sentence-fragment headlines with a full stop ("No small print.") | a headline that says the claim |
+| One word of the headline in the accent color | one color for the headline |
+| Em dashes, arrows or hand glyphs as list bullets | plain bullets, checks, or no bullets |
+| Three typefaces; a characterful display grotesk at 0.9–1.0 leading over a quiet sans; mono for labels | one family, two at most, from the product or the subject |
+| Warm off-white ground with crimson, terracotta or ochre accent | the product's palette, or white and one accent |
+| A clever metaphor in every section heading | plain section names, the claim in the heading |
+| An interactive gadget the product does not have (estimator, calculator, configurator) | the product's real fragment; a gadget only if it exists |
+| "Only one animation" that is a staged entrance of a decoration | a transition on a real state change, or none |
+
+The AI-feel pass: before delivery, name the three elements a working designer would point at first and say "a model made this", and remove them. If none can be named, look again.

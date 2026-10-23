@@ -31,13 +31,13 @@ Trigger: "quiero hacer una web para mi empresa", "landing", "sitio".
 
 Trigger: "página de precios", "planes", "pricing".
 
-Pricing is a persuade surface. Run **P20** in full (gate, direction sheet, imagery, critique passes) with these constraints carried as the floor:
+Pricing is a **product persuade** surface. Run **P20** with `art-direction` in restraint mode (gate and direction sheet still required; the direction will usually be convention plus two or three decided details and the product's own fragment as the only image) with these constraints carried as the floor:
 
 1. `laws-of-ux` `areas/navigation-choices.md` pricing block: 3 to 4 self-serve tiers in the row, enterprise separated, one recommended plan (badge plus structure, never color alone), differentiators only on cards, the full matrix in a comparison table below.
 2. `laws-of-ux` ethics: no fake scarcity, no confirmshaming, cancel and downgrade stated plainly, trial terms explicit.
 3. `design-review` on the result: Von Restorff on the recommended plan, Similarity across cards, hit areas on the period toggle, contrast computed.
 
-A pricing page built from the three constraints alone, without the direction sheet, is the stock SaaS pricing page and fails the build.
+A pricing page built from the three constraints alone, with the typeface, accent and spacing stated in the sheet, is a correct answer. A pricing page dressed as an invoice, with stamps, three fonts and an estimator the product lacks, fails the build even though every rule was followed.
 ## P4. Redesign an existing screen or app
 
 Trigger: "rediseñar", "modernizar", "se ve viejo", "hazlo premium", "mejora la UI".
@@ -192,7 +192,7 @@ Trigger: "tokens", "theme", "dark mode", "DESIGN.md", "que se vea igual en deskt
 
 ## P20. Persuade surface: landing, marketing, launch, store page
 
-Trigger: "landing", "web para mi empresa", "página de producto", "portfolio", "se ve genérica", "AI-made".
+Trigger: "landing", "web para mi empresa", "página de producto", "portfolio", "se ve genérica", "AI-made". First decide product persuade (restraint mode) or brand persuade (expressive mode); a company site for a service business is usually product persuade with one brand moment in the hero.
 
 1. Stack and form factor (web most often; a native showcase screen sometimes).
 2. `design-source` if the product has no tokens yet (the direction's palette and type become the semantic layer).

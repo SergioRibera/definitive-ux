@@ -47,7 +47,8 @@ Every surface is one of three. It changes which rules lead:
 
 | Register | Surfaces | Leads |
 | --- | --- | --- |
-| **persuade** | landing, marketing, pricing, signup, portfolio, launch and onboarding screens, store pages | `art-direction` with its gate; design is the product; `laws-of-ux` rules are the floor |
+| **persuade, product** | SaaS landing, pricing, signup, onboarding, feature pages, docs home | `art-direction` in **restraint** mode: convention plus two or three decided details, no concept costume; `laws-of-ux` rules are the floor |
+| **persuade, brand** | portfolio, campaign, restaurant, event, launch film, editorial, store page where the design is the message | `art-direction` expressive mode: inventory-driven idea, imagery, one signature move |
 | **operate** | tools, dashboards, settings, editors, HMIs, inboxes, shells | `better-interface`; density, keyboard, states; quiet rules from `slop-tells.md` |
 | **read** | docs, articles, changelogs, help | calm reading column, identity in the frame |
 
@@ -82,7 +83,7 @@ Merge rules:
 
 - One root cause is one finding with every location. The owner of the rule keeps the row; others fold their Why into it.
 - Every finding keeps `file:line` or the exact screen and element. No evidence, no finding.
-- Purpose test on every visual finding and every build decision (`references/slop-tells.md`): a technique with no stated purpose is a finding; removing it without adding substance is also a finding. On a persuade build, a missing `design/direction.md`, a default typeface or a category palette is Blocking on the build itself, and the category-reflex check runs before delivery.
+- Purpose test on every visual finding and every build decision (`references/slop-tells.md`): a technique with no stated purpose is a finding; removing it without adding substance is also a finding. On a persuade build, a missing `design/direction.md`, an unstated default, a category palette, a performance tell on a product surface, or an invented product feature is Blocking on the build itself; the category-reflex check and the AI-feel pass run before delivery.
 - At most one or two Laws of UX per finding.
 - Cap 15 (full) or 5 (quick); Blocking never falls off the cap.
 - Read-only by default. Edits only when asked or where a playbook step says "after confirmation". Rust edits follow `rust-engineering` and `cargo check`.
