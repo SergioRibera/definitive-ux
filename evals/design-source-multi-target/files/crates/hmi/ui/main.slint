@@ -1,0 +1,29 @@
+// Point-of-sale terminal, 800x480 resistive touch, used in a bright shop.
+export component Terminal inherits Window {
+    width: 800px;
+    height: 480px;
+    background: #f4f4f7;
+
+    VerticalLayout {
+        padding: 12px;
+        spacing: 6px;
+        Text { text: "Today"; font-size: 15px; color: #444; }
+        Rectangle {
+            background: white;
+            border-radius: 6px;
+            height: 120px;
+            VerticalLayout {
+                padding: 10px;
+                Text { text: "Revenue"; font-size: 11px; color: #999; }
+                Text { text: "$12,480"; font-size: 20px; color: #2a7ae2; }
+            }
+        }
+        Rectangle {
+            background: #2a7ae2;
+            border-radius: 4px;
+            height: 40px;
+            TouchArea { clicked => { } }
+            Text { text: "New sale"; color: white; font-size: 13px; horizontal-alignment: center; vertical-alignment: center; }
+        }
+    }
+}

@@ -60,7 +60,7 @@ The orchestrator never reviews anything itself. It resolves intent and stack, th
 
 ## Evals
 
-`evals/` follows the `claude plugin eval` layout (one directory per case: `case.yaml`, `prompt.md`, `graders/`, optional `files/`). Cases cover React, description-only and Rust (Freya, egui) fixtures.
+`evals/` follows the `claude plugin eval` layout (one directory per case: `case.yaml`, `prompt.md`, `graders/`, optional `files/`). Cases cover React, description-only, Rust (Freya, egui) and a multi-target design-source workspace (Freya desktop, Slint HMI, Leptos web).
 
 ## License
 

@@ -1,0 +1,15 @@
+schema_version: "1.1"
+name: design-source-multi-target
+expected_outcome: |
+  The agent routes through definitive-ux (build / design source intent), detects three stacks (Freya desktop,
+  Slint embedded HMI, Leptos web) and writes one design source: a DESIGN.md with identity, registers, color
+  strategy and semantic roles with light and dark values, type scale, spacing and radius scales, motion tokens,
+  density per form factor and voice; one three-layer token file (primitive, semantic, component); and a derived
+  theme per target in its own idiom (a Rust theme module for Freya, a `global Theme` in .slint for the HMI, CSS
+  custom properties for Leptos). Form factor rules are respected: the HMI gets larger type (body at least 18px),
+  contrast at least 7:1 and touch targets at least 48px; desktop body 14 to 16; web uses rem. Contrast ratios are
+  computed (the bundled script or the formula), not asserted. The report lists components still reading literals
+  as a hand-off, and marks product decisions it could not infer as gaps to confirm instead of inventing them.
+  No edits to the three apps beyond the new theme files unless the user confirms.
+context:
+  scaffold_script: place-files.sh
